@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+  <link rel="stylesheet" type="text/css" href="/static/css/careers/main.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/careers/index.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/careers/openings.css">
+</head>
+<body>
+  <% include ../partials/navbar %>
+  <%- include("./partials/hero", {title: "Job Openings", btn: false}); %>
+
+  <section id="openings">
+    <div id="intro">
+      <h1>Join Us</h1>
+      <p>What's your passion? Check out our open positions below.</p>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li id="full-time-btn" role="presentation" class="active"><a>FULL TIME</a></li>
+      <li id="internship-btn" role="presentation"><a>INTERNSHIP</a></li>
+    </ul>
+
+    <div id="full-time">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="/careers/openings/CTM">Clinical Trial Manager, Full-time</a>
+            <p class="opening-location">Greater San Diego Area, CA</p>
+            <p class="opening-date">Jan 1, 2019</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="/careers/openings/RAA">Regulatory Affairs Associate, Full-time</a>
+            <p class="opening-location">Greater San Diego Area, CA</p>
+            <p class="opening-date">Jan 1, 2019</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="/careers/openings/CDM">Clinical Data Manager, Full-time</a>
+            <p class="opening-location">Greater San Diego Area, CA</p>
+            <p class="opening-date">Jan 1, 2019</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="/careers/openings/EA">Executive Assistant, Full-time</a>
+            <p class="opening-location">Greater San Diego Area, CA</p>
+            <p class="opening-date">Jan 1, 2019</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="/careers/openings/CM">Contract Manager, Full-time</a>
+            <p class="opening-location">Greater San Diego Area, CA</p>
+            <p class="opening-date">Jan 1, 2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="internship" class="hidden-tabs">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">Business Administrative/HR Associate, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA </p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">Financial/Accounting, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA </p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">Cell Manufacturing Associate, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA </p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">Quality Control/ Bioassay, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA</p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">Clinical Trial Management Associate, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA </p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">Trial Data Management Associate, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA </p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">Regulatory Affair Associate, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA </p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="opening-card">
+            <a class="opening-title" href="#" data-toggle="modal" data-target="#application">IT Associate, Internship</a>
+            <p class="opening-location">Greater San Diego Area, CA </p>
+            <p class="opening-date">Jan 1, 2019 (2 Openings)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include("./partials/modal", {action: "/careers/openings", isInternship}); %>
+  <% include ../partials/footer %>
+  <% include ../partials/scripts %>
+  <script src="/static/js/careers/openings.js"></script>
+  <script>
+    <% if (locals.alert === 'success') { %>
+      $("#alert").css("display", "block");
+      setTimeout(() => {
+          $("#alert").css("display", "none");
+      }, 2500);
+    <% } %>
+
+    $("#submit").click((e) => {
+        $("#submit").text("processing...");
+    });
+  </script>
+</body>
+</html>

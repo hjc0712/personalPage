@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+  <link rel="stylesheet" href="/static/css/references/main.css">
+  <link rel="stylesheet" href="/static/css/references/fda.css">
+<head>
+
+<body>
+  <% include ../partials/navbar %>
+  <%- include("./partials/hero", {title: "FDA"}) %>
+
+  <section class="container" id="fda">
+    <div id="content" class="row">
+      <div class="col-sm-3" id="sidebar">
+        <div class="input-group input-group-lg searchbar">
+          <input type="text" class="form-control" style="border-radius: 0">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit" style="border-radius: 0">Search</button>
+          </span>
+        </div>
+        <div class="list-group">
+          <a id="guidances" class="list-group-item active">Guidances</a>
+          <a id="regulatory" class="list-group-item">Regulatory Pathway</a>
+          <a id="rmat" class="list-group-item">RMAT</a>
+          <a id="gcp" class="list-group-item">GCP</a>
+          <a id="21cfr" class="list-group-item">21CFR Part11</a>
+          <a id="esubmissions" class="list-group-item">eSubmissions</a>
+          <a id="odac" class="list-group-item">ODAC/Meetings</a>
+          <a id="rems" class="list-group-item">REMS</a>
+          <a id="drugs" class="list-group-item">Drugs@FDA</a>
+          <a id="odd" class="list-group-item">ODD Database</a>
+          <a id="otat" class="list-group-item">OTAT Approvals</a>
+          <a id="kymriah" class="list-group-item">KYMRIAH</a>
+          <a id="yescarta" class="list-group-item">YESCARTA</a>
+          <a id="luxturna" class="list-group-item">LUXTURNA</a>
+          <a id="sbia" class="list-group-item">SBIA</a>
+          <a id="presentations" class="list-group-item">Presentations</a>
+          <a id="anti-pd-1" class="list-group-item">Anti-PD-1 mAb</a>
+          <a id="egfr" class="list-group-item">EGFR mAb</a>
+          <a id="ctla-4" class="list-group-item">CTLA-4 mAb</a>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div id="main-content">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <% include ../partials/footer %>
+  <% include ../partials/scripts %>
+  <script src="/static/js/references/fda.js"></script>
+</body>
+</html>

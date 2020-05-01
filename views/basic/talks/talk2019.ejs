@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../partials/head %>
+  <link rel="stylesheet" href="/static/css/basic/main.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/basic/talks.css">
+</head>
+<body>
+  <% include ../../partials/navbar %>
+  <%- include("../partials/hero", {title: "Events"}); %>
+
+<section class="buttons">
+        <div class="btn-group btn-group-justified year" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <a type="button" class="btn btn-primary" href="/basic/talk2019">2019</a>
+            </div>
+            <div class="btn-group" role="group">
+                <a type="button" class="btn btn-primary" href="/basic/talk2018">2018</a>
+            </div>
+            <div class="btn-group" role="group">
+                <a type="button" class="btn btn-primary" href="/basic/talk2017">2017</a>
+            </div>
+        </div>
+    </section>
+
+<section id="cd-timeline" class="cd-container">
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture">
+            <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture"> -->
+            <span class="glyphicon glyphicon-list-alt"></span>
+        </div> <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <a href="https://www.jpmorgan.com/global/healthcareconference">J.P. Morgan 2019</a>
+            <h2 class="website">San Francisco</h2>
+            <a href="https://www.jpmorgan.com/global/healthcareconference" class="cd-read-more">Learn more</a>
+            <span class="cd-date">Jan 5-10, 2019</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+</section> <!-- cd-timeline -->
+
+<% include ../../partials/footer%>
+<% include ../../partials/scripts %>
+
+</body>
+</html>

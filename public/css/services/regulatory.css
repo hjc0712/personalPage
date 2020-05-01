@@ -1,0 +1,91 @@
+#businesses {
+  margin: 80px auto;
+}
+
+#businesses .row {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#businesses .row > div {
+  flex: 1;
+}
+
+#businesses .row .business-card {
+  border: solid 1px #ddd;
+  border-radius: 4px;
+	box-shadow: 8px 8px 6px -3px grey;
+  height: 100%;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#businesses .row .business-card > img {
+  height: auto; 
+  width: 100%;
+}
+
+#businesses .row .business-card h3 {
+  text-align: center;
+}
+
+#businesses .row .business-card .content {
+  margin-right: 20px;
+}
+
+#businesses .row .business-card .content .text {
+  list-style-type: disc;
+}
+
+#businesses #float-btn {
+  position: fixed;
+  right: 0;
+  top: 70%;
+}
+
+#businesses #float-btn a {
+  background: #7B2B9B;
+  border: solid 1px #7B2B9B;
+  color: #fff;
+  padding: 10px 20px;
+  transform: translate(75%, 0);
+  transition: transform 0.5s ease-in-out;
+}
+
+#businesses #float-btn a:hover {
+  transform: translate(0, 0);
+}
+
+@media screen and (max-width: 768px) {
+  #businesses {
+    margin: 50px auto;
+  }
+
+  #businesses .row {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  #businesses .row .business-card {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  #businesses .row .business-card .img-frame {
+    height: 200px;
+  }
+
+  #businesses .row .business-card .content {
+    margin: 10px auto;
+  }
+
+  #businesses .row .business-card h3 {
+    margin-bottom: 20px;
+  }
+
+  #businesses #float-btn a {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,43 @@
+#businesses {
+  margin: 80px auto;
+}
+
+#businesses .row {
+  margin: -20px auto;
+  width: 90%;
+}
+
+#businesses .thumbnail {
+	box-shadow: 8px 8px 6px -3px grey;
+  margin: 20px auto;
+  text-align: center;
+  width: 90%;
+}
+
+#businesses .thumbnail > a {
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto;
+}
+
+#businesses .thumbnail > img {
+  height: auto;
+  width: 100%;  
+}
+
+#businesses .modal-body > ul {
+  list-style-type: disc;
+  margin-left: 30px;
+  text-align: start;
+}
+
+@media screen and (max-width: 768px) {
+  #businesses {
+    margin: 50px auto;
+  }
+
+  #businesses .thumbnail > a {
+    font-size: 12px;
+    margin: 5px auto;
+  }
+}

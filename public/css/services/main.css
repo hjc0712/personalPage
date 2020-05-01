@@ -1,0 +1,78 @@
+#hero {
+  background-image: url("/static/img/index/cell-tech-1.jpg");
+  background-position-y: -5%;
+  background-size: 115%;
+  height: 450px;
+  padding-top: 65px;
+  position: relative;
+}
+
+#hero #hero-content {
+  margin-left: 100px;
+  margin-top: 60px;
+}
+
+#hero #hero-content h1 {
+  color: white;
+  font-size: 65px;
+  margin-bottom: 20px;
+  position: relative;
+  text-shadow: 4px 4px #000;
+}
+
+#hero #hero-content p {
+  color: white;
+  font-size: 22px;
+  position: relative;
+  text-shadow: 2px 2px #000;
+}
+
+#hero #hero-content a {
+  background: #7B2B9B;
+  border: solid 1px #7B2B9B;
+	color: #fff;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+#hero .gradient-mask {
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+  height: 30%;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #hero {
+    background-size: 768px auto;
+    height: 250px;
+    text-align: center;
+  }
+
+  #hero #hero-content {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+
+  #hero #hero-content h1 {
+    font-size: 45px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px #000;
+  }
+
+  #hero #hero-content p {
+    font-size: 14px;
+  }
+
+  #hero #hero-content a {
+    font-size: 14px;
+    margin-top: -5px;
+    padding: 8px;
+  }
+
+  #hero .gradient-mask {
+    height: 10%;
+    top: 90%;
+  }
+}

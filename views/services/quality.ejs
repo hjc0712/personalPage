@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+  <link rel="stylesheet" href="/static/css/services/main.css">
+  <link rel="stylesheet" href="/static/css/services/quality.css">
+</head>
+<body>
+  <% include ../partials/navbar %>
+  <%- include("./partials/hero", {page: "quality", title: "Quality", keyword: "ASQ CQA GxP Independent Auditor"}); %>
+
+  <section id="businesses">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="business-card">
+          <img src="/static/img/services/quality1.jpeg">
+          <h3>GxP Independent Auditing</h3>
+          <div class="content">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <ul class="text">
+              <li>GLP / GMP / GCP Global Independent Quality Audit</li>
+              <li>Pre-Audit Plan Development per Clients' Business Need</li>
+              <li>Auditng Material Preparation</li>
+              <li>On-site Auditing</li>
+              <li>Audit Funding Summary and Auditing Report</li>
+              <li>CAPA Review</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="business-card">
+          <img src="/static/img/services/quality2.jpeg">
+          <h3>GxP SOPs Training Services</h3>
+          <div class="content">
+            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+            <ul class="text">
+              <li>GAP Analysis of Current SOPs</li>
+              <li>Develop SOPs per Customer Practices  </li>
+              <li>Develop SOPs Training Materials</li>
+              <li>Cloud Based Fully Validated GxP SOPs Training System Build Up </li>
+              <li>Cloud Based Fully Validated GxP SOPs Training Records Maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="business-card">
+          <img src="/static/img/services/quality6.jpeg">
+          <h3>GxP Master Quality System Development</h3>
+          <div class="content">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            <ul class="text">
+              <li>Provide All Levels of Quality Management Services per Client's Business Needs</li>
+              <li>GAP Analysis of Current Quality Management System</li>
+              <li>Review / Develop Company Quality Manual </li>
+              <li>Review / Develop Company Quality Policy</li>
+              <li>Review / Develop SOPs </li>
+              <li>Review / Develop Work Instructions / Forms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="business-card">
+          <img src="/static/img/services/quality4.jpeg">
+          <h3>Computer System Validation</h3>
+          <div class="content">
+            <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
+            <ul class="text">
+              <li>GAP Analysis of Current Computer System Validation Documents</li>
+              <li>Conduct 21 CFR Part 11 Computer System Validation </li>
+              <li>Review Current Computer System Management SOPs</li>
+              <li>Develop Computer System Management SOPs </li>
+              <li>Develop Computer System Management SOPs Training Materials</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <% include ../partials/footer %>
+  <% include ../partials/scripts %>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+  <link rel="stylesheet" type="text/css" href="/static/css/careers/main.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/careers/opening.css">
+</head>
+<body>
+  <% include ../partials/navbar %>
+
+  <div id="alert" class="alert alert-success" style="display: none; margin-top: 70px" role="alert">Thanks For Applying, We Will Contact You Soon</div>
+
+  <section class="description">
+    <%- description %>
+    <a type="button" class="btn btn-lg" href="#" data-toggle="modal" data-target="#application">Apply</a>
+  </section>
+  
+  <%- include("./partials/modal", {action: "/careers/openings/" + id, isInternship}) %>
+  <% include ../partials/footer %>
+  <% include ../partials/scripts %>
+  <script>
+    <% if (locals.alert === 'success') { %>
+      $("#alert").css("display", "block");
+      setTimeout(() => {
+        $("#alert").css("display", "none");
+      }, 2500);
+    <% } %>
+
+    $("#submit").click((e) => {
+      $("#submit").text("processing...");
+    });
+  </script>
+</body>
+</html>
