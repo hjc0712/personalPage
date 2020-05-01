@@ -30,6 +30,18 @@ a {
 	height: 95%;
 }
 
+.navbar .icons {
+	float: left;
+	padding-top: 38px;
+	padding-left: 20px;
+	justify-content: center;
+}
+
+.navbar .icons > a {
+	margin: 1px 1px;
+	color: black;
+}
+
 .navbar-default .navbar-collapse {
 	max-height: fit-content;
 }

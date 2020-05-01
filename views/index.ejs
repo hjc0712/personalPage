@@ -8,13 +8,17 @@
 	<% include partials/navbar %>
 
 	<section class="hero">
-		<video class="hero-vid" playsinline autoplay muted loop poster="/static/img/index/home0.png">
-			<source src="/static/vid/index/hero.mp4">
-		</video>
+		<!--<video class="hero-vid" playsinline autoplay muted loop poster="/static/img/index/home0.png">-->
+			<!--<source src="/static/vid/index/hero.mp4">-->
+		<!--</video>-->
+        <div class = hero-vid>
+            <!--<img src="/static/img/index/universe.jpg">-->
+        </div>
+
 		<div class="hero-content-area">
-			<h1>Welcome to my page</h1>
+			<h1>WELCOME 欢迎 </h1>
 			<h3 hidden><a href="#" class="contact" role="button" data-toggle="modal" data-target="#contact">Contact Me <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></h3>
-			<h3><a href="/home">Get Start <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </a>  </h3>
+			<h3><a href="/home" class="contact">HOME PAGE / 进入主页 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </a>  </h3>
 		</div>
 	</section>
 
@@ -47,72 +51,6 @@
 	</div>
 
 
-    <section class="mission">
-        <h2>Our Mission</h2>
-        <hr>
-        <p>Our mission is to reshape the landscape of cancer treatement. Taking in young minds, new ideas, and advanced technologies to help in the betterment of the human race and its war with cancer.</p>
-    </section>
-
-    <section class="services">
-        <h2>Our Services</h2>
-        <hr>
-
-        <ul class="grid">
-            <li class="large">
-                <h3>QUALITY</h3>
-                <p>ASQ CQA GxP Independent Auditor</p>
-                <div class="service-img">
-                    <a href="/services/quality"><img src="/static/img/index/quality0.png"></a>
-                </div>
-            </li>
-
-            <li class="small">
-                <h3>REGULATORY</h3>
-                <p>IND / CTA / BLA / NDA eCTD Submission</p>
-                <div class="service-img">
-                    <a href="/services/regulatory"><img src="/static/img/index/reg_home2.jpg"></a>
-                </div>
-            </li>
-
-            <li class="small">
-                <h3>CLINICAL</h3>
-                <p>Phase I / Phase II / Phase III Oncology Global Clinical Development</p>
-                <div class="service-img">
-                    <a href="/services/clinical"><img src="/static/img/index/clinical1.jpg"></a>
-                </div>
-            </li>
-
-            <li class="large">
-                <h3>BUSINESS</h3>
-                <p>Marketing Research / Due Dilligence</p>
-                <div class="service-img">
-                    <a href="/services/business"><img src="/static/img/index/bd1.png"></a>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-
-	<footer>
-		<div class="corp-info">
-			<h4>Headquarter</h4>
-			<p>8525 Camino Santa Fe Ste E, <br> San Diego, CA 92121</p>
-		</div>
-		<div class="corp-info">
-			<h4>Beijing Office</h4>
-			<p>Beijing Airport Industrial Zone B <br> District Twin Tower A 6th Floor Suite 611 </p>
-		</div>
-		
-		<div>
-		<ul>
-			<li><a href="https://twitter.com/crconcology" class="fab fa-twitter-square fa-2x"></a></li>
-			<li><a href="https://www.facebook.com/crconcology/" class="fab fa-facebook-square fa-2x"></a></li>
-			<li><a href="https://cn.linkedin.com/company/crconc" class="fab fa-linkedin fa-2x"></a></li>
-			<li><a href="https://instagram.com/crconcology?utm_source=ig_profile_share&igshid=7jw0sgvudawh" class="fab fa-instagram fa-2x"></a></li>
-		</ul>
-		<p>CRC ONCOLOGY 2018 ©</p>
-		</div>
-  	</footer>
 
 	<% include partials/scripts %>
   <script>

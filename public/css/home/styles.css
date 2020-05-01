@@ -1,0 +1,136 @@
+a:hover {
+    opacity: 0.8;
+}
+
+a:focus{
+    text-decoration: none;
+    color:white;
+}
+
+a.btn {
+    background-color: #ebdfec;
+    border-radius: 4px;
+    font-weight: bold;
+    opacity: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Services Section */
+
+.services {
+    margin-bottom: 100px;
+    padding: 50px 80px;
+}
+
+.services h2 {
+    font-size: 35px;
+}
+
+.services hr {
+    border: 1.5px solid #7B2B9B;
+    width: 250px;
+}
+
+.services p {
+    font-size: 20px;
+}
+
+.services .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 30px;
+    margin-top: -50px;
+    width: 100%;
+}
+
+.services .grid li {
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.services .grid li.small {
+    flex-basis: 40%;
+    padding-right: 20px;
+}
+
+.services .grid li.large {
+    flex-basis: 60%;
+}
+
+.services .grid li h3 {
+    font-size: 20px;
+}
+
+.services .grid li p {
+    font-size: 13px;
+}
+
+.services .grid li .service-img {
+    height: 100%;
+    width: 90%;
+}
+
+.services .grid li .service-img img {
+    box-shadow: 0 0 20px grey;
+    height: 100%;
+    width: 100%;
+}
+
+.services .grid a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 1100px) {
+    .services .grid {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .services .grid li {
+        height: 200px;
+    }
+
+    .services .grid li.small,
+    .services .grid li.large {
+        flex-basis: 100%;
+    }
+
+    .services .grid li .service-img {
+        box-shadow: 0 0 20px grey;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .services .grid li .service-img img {
+        box-shadow: none;
+        height: auto;
+    }
+
+    .services .grid li.small {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .services {
+        margin-bottom: 100px;
+        padding: 20px 40px;
+    }
+
+    .services .grid li {
+        height: 144px;
+    }
+}
