@@ -18,6 +18,11 @@ router.get('/', (req, res) => {
     res.render('home');
 });
 
+router.get('/profile',(req,res) => {
+    res.render('profile/profile');
+});
+
+
 router.post('/', (req, res) => {
     var ejsname = req.body.name;
     var ejsemail = req.body.email;
