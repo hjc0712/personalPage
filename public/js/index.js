@@ -44,6 +44,11 @@ $(document).ready(function() {
     $(".navbar-toggle").attr("aria-expanded", false);
     $(".navbar-collapse").removeClass("in");
   })
+
+    $(".contact").click((e) => {
+        console.log(6)
+        $("#contactBlock").css('display','block');
+    })
 });
 
 function checkSmallSize() {

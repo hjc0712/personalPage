@@ -30,10 +30,15 @@ a {
 	height: 95%;
 }
 
+.navbar .sidecolumn {
+	float: left;
+	padding-top: 5px;
+	padding-left: 20px;
+	justify-content: center;
+}
+
 .navbar .icons {
 	float: left;
-	padding-top: 38px;
-	padding-left: 20px;
 	justify-content: center;
 }
 

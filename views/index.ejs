@@ -6,49 +6,20 @@
 </head>
 <body>
 	<% include partials/navbar %>
+    <%- include("partials/contactModal", {currentUrl:"/"}); %>
 
 	<section class="hero">
 		<!--<video class="hero-vid" playsinline autoplay muted loop poster="/static/img/index/home0.png">-->
 			<!--<source src="/static/vid/index/hero.mp4">-->
 		<!--</video>-->
-        <div class = hero-vid>
-            <!--<img src="/static/img/index/universe.jpg">-->
-        </div>
+        <div class = hero-vid></div>
 
 		<div class="hero-content-area">
 			<h1>WELCOME 欢迎 </h1>
-			<h3 hidden><a href="#" class="contact" role="button" data-toggle="modal" data-target="#contact">Contact Me <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></h3>
-			<h3><a href="/home" class="contact">HOME PAGE / 进入主页 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </a>  </h3>
+            <!--<h3><a href="#" class="contact" role="button" data-toggle="modal" data-target="#contact2">Contact Me <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></h3>-->
+			<h3><a href="/home" class="homePgae">HOME PAGE / 进入主页 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </a>  </h3>
 		</div>
 	</section>
-
-	<div class="modal fade" id="contact" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Contact Me</h4>
-				</div>
-				<div class="modal-body">
-					<form action="/" method="POST">
-						<div class="form-group">
-							<input class="form-control" type="text" id="name" name="name" placeholder="Name" maxlength="256" required autofocus="true" />
-						</div>
-						<div class="form-group">
-							<input class="form-control" type="email" id="email" name="email" placeholder="E-mail address" maxlength="256" required />
-						</div>
-						<div class="form-group">
-							<input class="form-control" type="text" id="subject" name="subject" placeholder="Subject" maxlength="256" required />
-						</div>
-						<div class="form-group">
-							<textarea class="form-control" id="message" name="message" placeholder="Type your message here" maxlength="5000" required></textarea>
-						</div>
-						<button type="submit" class="btn btn-default" id="submit">Submit</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 

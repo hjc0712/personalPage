@@ -5,12 +5,13 @@ const express = require('express'),
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
-    service: 'hotmail',
+    service: '163',
     auth: {
-        user: 'IT.Group@crconc.org',
-        pass: 'develop@CRC'
+        user: 'hjc0712@163.com',
+        pass: '135798642'
     }
 });
+
 
 
 router.get('/', (req, res) => {
@@ -28,8 +29,8 @@ router.post('/', (req, res) => {
 
 
     var mailOptions = {
-        from: 'IT.Group@crconc.org',
-        to: 'IT.Group@crconc.org',
+        from: 'hjc0712@163.com',
+        to: 'hongjichen0712@gmail.com',
         subject: 'Contact from '+ ejsname,
         text: 'name: '+ejsname + '\n' +'email: ' + ejsemail + '\n' +'subject: ' + ejssubject + '\n' +'message: ' + ejsmessage
     };
@@ -39,7 +40,8 @@ router.post('/', (req, res) => {
             console.log(error);
         } else {
             console.log('Email sent: ' + info.response);
-            res.render('index');
+            res.render('home');
+            // $("#contactBlock").css('display','none');
         }
     });
 

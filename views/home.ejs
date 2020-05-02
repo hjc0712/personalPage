@@ -6,41 +6,59 @@
     </head>
     <body>
         <% include partials/navbar %>
+        <%- include("partials/contactModal", {currentUrl:"/home"}); %>
 
         <section class="services">
-            <h2>Our Services</h2>
+            <!--<h4>Stay hungry, stay foolish / 虚心若谷，求知若愚</h4>-->
+            <!--<h4>Just live your life cause we don't live twice / 活出自己，我们只有一次机会做自己生命的主角</h4>-->
             <hr>
 
             <ul class="grid">
                 <li class="large">
-                    <h3>QUALITY</h3>
-                    <p>ASQ CQA GxP Independent Auditor</p>
+                    <h3>MY PROFILE</h3>
+                    <p>Experiences & Resume</p>
                     <div class="service-img">
-                        <a href="/services/quality"><img src="/static/img/index/quality0.png"></a>
+                        <a href="/services/quality"><img src="/static/img/index/profile.jpg"></a>
                     </div>
                 </li>
 
                 <li class="small">
-                    <h3>REGULATORY</h3>
-                    <p>IND / CTA / BLA / NDA eCTD Submission</p>
+                    <h3>MY PROJECTS</h3>
+                    <p>Full stack & AI & ...</p>
                     <div class="service-img">
-                        <a href="/services/regulatory"><img src="/static/img/index/reg_home2.jpg"></a>
+                        <a href="/services/regulatory" ><img id="project" src="/static/img/index/project.jpg"></a>
                     </div>
                 </li>
 
                 <li class="small">
-                    <h3>CLINICAL</h3>
-                    <p>Phase I / Phase II / Phase III Oncology Global Clinical Development</p>
+                    <h3>MY NOTEBOOK</h3>
+                    <p>Work & Life</p>
                     <div class="service-img">
-                        <a href="/services/clinical"><img src="/static/img/index/clinical1.jpg"></a>
+                        <a href="/services/clinical"><img src="/static/img/index/notebook.jpg"></a>
                     </div>
                 </li>
 
                 <li class="large">
-                    <h3>BUSINESS</h3>
-                    <p>Marketing Research / Due Dilligence</p>
+                    <h3>MY MUSIC</h3>
+                    <p>Instrument & Vocal & Productions</p>
                     <div class="service-img">
-                        <a href="/services/business"><img src="/static/img/index/bd1.png"></a>
+                        <a href="/services/business"><img src="/static/img/index/music.jpg"></a>
+                    </div>
+                </li>
+
+                <li class="large">
+                    <h3>MY JOURNEYS</h3>
+                    <p>China & USA</p>
+                    <div class="service-img">
+                        <a href="/services/quality"><img src="/static/img/index/journey.jpg"></a>
+                    </div>
+                </li>
+
+                <li class="small">
+                    <h3>MY IDOLS</h3>
+                    <p>Sport & Music & Film</p>
+                    <div class="service-img">
+                        <a href="/services/regulatory"><img id="idol" src="/static/img/index/idol.jpg"></a>
                     </div>
                 </li>
             </ul>
