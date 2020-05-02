@@ -1,0 +1,67 @@
+div {
+    margin: auto;
+}
+
+.profile {
+    width: 60%;
+    max-width: 1000px;
+    padding: 100px 0px;
+    padding-left: 10px;
+    margin: auto;
+}
+
+.intro {
+    display: flex;
+    width: 100%;
+}
+
+.intro-mob{
+    display: none;
+}
+
+.photo {
+    width: 50%;
+}
+
+.proImg {
+    width: 70%;
+}
+
+.info {
+    font-family: "Big Caslon";
+    color: #5e5e5e;
+    font-size: 14px;
+}
+
+.info span {
+    font-family: 'Raleway';
+    color: gray;
+    font-size: 16px;
+}
+
+.profile hr {
+    margin-top: 50px;
+    border: 1.5px solid #31708f;
+    width: 70%;
+}
+
+
+
+@media (max-width: 1100px) {
+
+    .profile {
+        width: 80%;
+    }
+
+    .intro-mob{
+        display: inline;
+    }
+
+    .intro-web{
+        display: none;
+    }
+
+    .profile hr {
+        margin-top: 20px;
+    }
+}

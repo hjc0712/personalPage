@@ -3,10 +3,60 @@
 <head>
     <% include ../partials/head %>
     <link rel="stylesheet" type="text/css" href="/static/css/home/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/home/profile.css">
 </head>
 <body>
 <% include ../partials/navbar %>
 <%- include("../partials/contactModal", {currentUrl:"/home"}); %>
+
+<section class="profile">
+    <div class="intro-web">
+        <div class="intro">
+            <div class="photo">
+                <img class="proImg" src="/static/img/index/project.jpg">
+            </div>
+            <div class="info">
+                <p><span>Name: &nbsp;</span> Jichen Hong</p>
+                <p><span>Emails: &nbsp;</span> hongjichen0712@gmail.com</p>
+                <p><span>Phone: &nbsp;</span> +1 7253007581</p>
+                <p><span>Alias: &nbsp;</span>  JC, Integration</p>
+                <p><span>Location: &nbsp;</span> Seattle, Washington, USA</p>
+                <p><span>Motto: &nbsp;</span>
+                    <br> Stay hungry, stay foolish / 虚心若谷，求知若愚
+                    <br> Just live your life cause we don't live twice
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="intro-mob">
+        <div class="intro">
+            <div class="photo">
+                <img class="proImg" src="/static/img/index/project.jpg">
+            </div>
+            <div class="info">
+                <p><span>Name: &nbsp;</span> Jichen Hong</p>
+                <p><span>Emails: &nbsp;</span> hongjichen0712@gmail.com</p>
+                <p><span>Phone: &nbsp;</span> +1 7253007581</p>
+                <p><span>Alias: &nbsp;</span>  JC, Integration</p>
+            </div>
+        </div>
+        <br>
+        <div class="info">
+            <p><span>Location: &nbsp;</span> Seattle, Washington, USA</p>
+            <p><span>Motto: &nbsp;</span>
+                <br> Stay hungry, stay foolish / 虚心若谷，求知若愚
+                <br> Just live your life cause we don't live twice
+            </p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="experiences">
+
+    </div>
+</section>
+
 
 
 <% include ../partials/scripts %>
