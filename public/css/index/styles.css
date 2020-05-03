@@ -98,7 +98,7 @@ footer {
 }
 
 .hero .hero-content-area {
-	animation: 2s slidefade 3s forwards;
+	animation: 2s slidefade 2s forwards;
 	margin-top: 100px;
 	opacity: 0;
 	position: absolute;
@@ -143,6 +143,7 @@ footer {
 
 	.hero .hero-vid {
 		background-image: url("../../img/index/universe_short.jpg");
+		height: 600px;
 	}
 }
 

@@ -10,25 +10,45 @@
 
         <section class="services">
 
+            <!--left side column-->
             <div class="leftCol">
                 <div class="login">
-                    <button class="btn btn-default">Log in</button>
-                    <button class="btn btn-default">Sign up</button>
+                    <form action= "/login" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="username" name="username" placeholder="Username" maxlength="256" required autofocus="true" />
+                            <br>
+                            <input class="form-control" type="text" id="psd" name="psd" placeholder="Password" maxlength="256" required autofocus="true" />
+                        </div>
+                        <button type="submit" class="btn btn-default" id="submit">Log in</button>
+                        <button class="btn btn-default">Sign up</button>
+                    </form>
                 </div>
+                <hr>
                 <div class="news">
+                    <span>My Recent Intestes</span>
+                    <br>
 
+                    <div class="news1">
+
+                    </div>
+                    <div class="news2">
+
+                    </div>
+                    <div class="news3">
+
+                    </div>
                 </div>
             </div>
 
+            <!--2 small button-->
             <div class="showBt">
                 <p> ||| <span class="hoverText hideBtText">Login</span></p>
-
             </div>
             <div class="hideBt">
                 <p> ||| <span class="hoverText hideBtText">Hide</span></p>
-
             </div>
 
+            <!--main column-->
             <div class="mainCol">
                 <hr>
                 <ul class="grid">

@@ -22,15 +22,17 @@ section {
     flex-direction: column;
 }
 
-.hoverText {
-    visibility: hidden;
+span {
+    font-family: 'Raleway';
+    color: gray;
+    font-size: 16px;
 }
 
 
 /*left column*/
 .leftCol {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 200px; /* Set the width of the sidebar */
+    width: 250px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 60px; /* Stay at the top */
@@ -44,11 +46,11 @@ section {
 
 @keyframes leftColSlideout {
     from {left: 0px}
-    to {left: -200px }
+    to {left: -250px }
 }
 
 @keyframes leftColSlidein {
-    from {left: -200px}
+    from {left: -250px}
     to {left: 0px }
 }
 
@@ -56,8 +58,8 @@ section {
     height: 30px;
     width: 15px;
     position: fixed;
-    top: 450px; /* Stay at the top */
-    left: 200px;
+    top: 400px; /* Stay at the top */
+    left: 250px;
     background-color: white;
     box-shadow: 0 0 20px grey;
     color: lightgrey;
@@ -67,8 +69,8 @@ section {
     height: 30px;
     width: 20px;
     position: fixed;
-    top: 450px; /* Stay at the top */
-    left: 5px;
+    top: 400px; /* Stay at the top */
+    left: 0px;
     background-color: gray;
     box-shadow: 0 0 20px grey;
     color: white;
@@ -88,23 +90,41 @@ section {
     cursor: pointer;
 }
 
+.hoverText {
+    visibility: hidden;
+}
+
 .hideBt:hover .hideBtText, .showBt:hover .hideBtText{
     visibility: visible;
 }
 
+.login {
+    margin: 20px 10px;
+}
+
+.news {
+    margin: 40px 10px;
+}
+
+.leftCol hr{
+    border: 0.5px solid lightgrey;
+    width: 90%;
+}
+
+/*main column*/
 .mainCol {
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 
 @keyframes mainColSlideout {
-    from {margin-left: 150px }
+    from {margin-left: 100px }
     to {margin-left: 0px }
 }
 
 @keyframes mainColSlidein {
     from {margin-left: 0px}
-    to {margin-left: 150px }
+    to {margin-left: 100px }
 }
 
 /* Services Section */
@@ -120,10 +140,10 @@ section {
     font-size: 35px;
 }
 
-.services hr {
-    border: 1.5px solid #31708f;
-    width: 250px;
-}
+/*.services hr {*/
+    /*border: 1.5px solid #31708f;*/
+    /*width: 250px;*/
+/*}*/
 
 .services p {
     font-size: 20px;
@@ -180,12 +200,37 @@ section {
     opacity: 0.8;
 }
 
+@media (max-width: 1400px) {
+    .leftCol{
+        width: 200px;
+    }
+
+    .hideBt{
+        left: 200px;
+    }
+
+    @keyframes leftColSlideout {
+        from {left: 0px}
+        to {left: -200px }
+    }
+
+    @keyframes leftColSlidein {
+        from {left: -200px}
+        to {left: 0px }
+    }
+}
+
+
 @media (max-width: 1100px) {
     h4 {
         font-size: 10px;
     }
 
     .leftCol{
+        display: none;
+    }
+
+    .hideBt {
         display: none;
     }
 
