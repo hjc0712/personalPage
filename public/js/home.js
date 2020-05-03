@@ -26,3 +26,18 @@ $(".showBt").click(() =>{
     },1000);
 })
 
+// Ajax call for web crawler
+$( document ).ready(function(){
+    //Perform Ajax request.
+    $.ajax({
+        url: '/home/crawler',
+        type: 'get',
+        success: function(data){
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            $('#content').html(errorMsg);
+        }
+    });
+});

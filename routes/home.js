@@ -16,6 +16,8 @@ var transporter = nodemailer.createTransport({
 });
 
 
+
+
 function collectLinks($){
     var allAbsoluteLinks = [];
     var absoluteLinks = $("a[href^='http']");
@@ -23,15 +25,14 @@ function collectLinks($){
         allAbsoluteLinks.push($(this).attr('href'));
     });
 
-    return absoluteLinks[0];
+    return absoluteLinks.length;
 }
 
-router.get('/', (req, res) => {
-    var links;
-    var pageToVisit = "https://search.yahoo.com/search?p=seattle+condos+Zillow";
-    request(pageToVisit, function(error, response, body) {
+function crawler(url, callback) {
+    request(url, function(error, response, body) {
         if(error) {
             console.log("Error: " + error);
+            callback("error");
         }
         // Check status code (200 is HTTP OK)
         console.log("Status code: " + response.statusCode);
@@ -39,12 +40,34 @@ router.get('/', (req, res) => {
             // Parse the document body
             var $ = cheerio.load(body);
             console.log("Page title:  " + $('title').text());
-            links = collectLinks($);
+            var links = collectLinks($);
             console.log(links);
+            callback(links);    //return parameter in call back function
         }
     });
+}
+
+router.get('/', (req, res) => {
     res.render('home');
 });
+
+
+router.get('/crawler', (req, res) => {
+    var url = "https://search.yahoo.com/search?p=seattle+condos+Zillow";
+    var url2 = "https://search.yahoo.com/search?p=coronavirus+statistics";
+    var url3 = "https://search.yahoo.com/search?p=javascript+crawler";
+    //use call back to make sure, 'res.render' happens after crawler finishing.
+    crawler(url, function (links) {   //use the returning parameter of callback function
+        crawler(url2, function(links2){
+            crawler(url3, function(links3){
+                console.log("sss"+links+links2+links3);
+                res.render('home');
+            })
+        })
+    });
+});
+
+
 
 router.get('/profile',(req,res) => {
     res.render('profile/profile');
