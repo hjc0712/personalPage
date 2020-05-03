@@ -10,59 +10,80 @@
 
         <section class="services">
 
-            <hr>
+            <div class="leftCol">
+                <div class="login">
+                    <button class="btn btn-default">Log in</button>
+                    <button class="btn btn-default">Sign up</button>
+                </div>
+                <div class="news">
 
-            <ul class="grid">
-                <li class="large">
-                    <h3>MY PROFILE</h3>
-                    <p>Experiences & Resume</p>
-                    <div class="service-img">
-                        <a href="/home/profile"><img src="/static/img/index/profile.jpg"></a>
-                    </div>
-                </li>
+                </div>
+            </div>
 
-                <li class="small">
-                    <h3>MY PROJECTS</h3>
-                    <p>Full stack & AI & ...</p>
-                    <div class="service-img">
-                        <a href="/services/regulatory" ><img id="project" src="/static/img/index/project.jpg"></a>
-                    </div>
-                </li>
+            <div class="showBt">
+                <p> ||| <span class="hoverText hideBtText">Login</span></p>
 
-                <li class="small">
-                    <h3>MY NOTEBOOK</h3>
-                    <p>Work & Life</p>
-                    <div class="service-img">
-                        <a href="/services/clinical"><img src="/static/img/index/notebook.jpg"></a>
-                    </div>
-                </li>
+            </div>
+            <div class="hideBt">
+                <p> ||| <span class="hoverText hideBtText">Hide</span></p>
 
-                <li class="large">
-                    <h3>MY MUSIC</h3>
-                    <p>Instrument & Vocal & Productions</p>
-                    <div class="service-img">
-                        <a href="/services/business"><img src="/static/img/index/music.jpg"></a>
-                    </div>
-                </li>
+            </div>
 
-                <li class="large">
-                    <h3>MY JOURNEYS</h3>
-                    <p>China & USA</p>
-                    <div class="service-img">
-                        <a href="/services/quality"><img src="/static/img/index/journey.jpg"></a>
-                    </div>
-                </li>
+            <div class="mainCol">
+                <hr>
+                <ul class="grid">
+                    <li class="large">
+                        <h3>MY PROFILE</h3>
+                        <p>Experiences & Resume</p>
+                        <div class="service-img">
+                            <a href="/home/profile"><img src="/static/img/index/profile.jpg"></a>
+                        </div>
+                    </li>
 
-                <li class="small">
-                    <h3>MY IDOLS</h3>
-                    <p>Sport & Music & Film</p>
-                    <div class="service-img">
-                        <a href="/services/regulatory"><img id="idol" src="/static/img/index/idol.jpg"></a>
-                    </div>
-                </li>
-            </ul>
+                    <li class="small">
+                        <h3>MY PROJECTS</h3>
+                        <p>Full stack & AI & ...</p>
+                        <div class="service-img">
+                            <a href="/services/regulatory" ><img id="project" src="/static/img/index/project.jpg"></a>
+                        </div>
+                    </li>
+
+                    <li class="small">
+                        <h3>MY NOTEBOOK</h3>
+                        <p>Work & Life</p>
+                        <div class="service-img">
+                            <a href="/services/clinical"><img src="/static/img/index/notebook.jpg"></a>
+                        </div>
+                    </li>
+
+                    <li class="large">
+                        <h3>MY MUSIC</h3>
+                        <p>Instrument & Vocal & Productions</p>
+                        <div class="service-img">
+                            <a href="/services/business"><img src="/static/img/index/music.jpg"></a>
+                        </div>
+                    </li>
+
+                    <li class="large">
+                        <h3>MY JOURNEYS</h3>
+                        <p>China & USA</p>
+                        <div class="service-img">
+                            <a href="/services/quality"><img src="/static/img/index/journey.jpg"></a>
+                        </div>
+                    </li>
+
+                    <li class="small">
+                        <h3>MY IDOLS</h3>
+                        <p>Sport & Music & Film</p>
+                        <div class="service-img">
+                            <a href="/services/regulatory"><img id="idol" src="/static/img/index/idol.jpg"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </section>
         <% include partials/footer %>
         <% include partials/scripts %>
+        <script src="/static/js/home.js"></script>
     </body>
 </html>

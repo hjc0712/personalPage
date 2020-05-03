@@ -22,6 +22,90 @@ section {
     flex-direction: column;
 }
 
+.hoverText {
+    visibility: hidden;
+}
+
+
+/*left column*/
+.leftCol {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 200px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 60px; /* Stay at the top */
+    left: 0px;
+    background-color: white;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    box-shadow: 0 0 20px grey;
+    align-content: center;
+}
+
+@keyframes leftColSlideout {
+    from {left: 0px}
+    to {left: -200px }
+}
+
+@keyframes leftColSlidein {
+    from {left: -200px}
+    to {left: 0px }
+}
+
+.hideBt{
+    height: 30px;
+    width: 15px;
+    position: fixed;
+    top: 450px; /* Stay at the top */
+    left: 200px;
+    background-color: white;
+    box-shadow: 0 0 20px grey;
+    color: lightgrey;
+}
+
+.showBt{
+    height: 30px;
+    width: 20px;
+    position: fixed;
+    top: 450px; /* Stay at the top */
+    left: 5px;
+    background-color: gray;
+    box-shadow: 0 0 20px grey;
+    color: white;
+    text-align: center;
+}
+
+.hideBtText {
+    font-size: 14px;
+    width: 120px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0px 10px;
+    background: black;
+}
+
+.hideBt:hover , .showBt:hover{
+    cursor: pointer;
+}
+
+.hideBt:hover .hideBtText, .showBt:hover .hideBtText{
+    visibility: visible;
+}
+
+.mainCol {
+    margin-left: 150px;
+}
+
+
+@keyframes mainColSlideout {
+    from {margin-left: 150px }
+    to {margin-left: 0px }
+}
+
+@keyframes mainColSlidein {
+    from {margin-left: 0px}
+    to {margin-left: 150px }
+}
 
 /* Services Section */
 
@@ -29,6 +113,7 @@ section {
     margin-bottom: 100px;
     padding: 50px 80px;
     padding-top: 100px;
+    display: flex;
 }
 
 .services h2 {
@@ -98,6 +183,14 @@ section {
 @media (max-width: 1100px) {
     h4 {
         font-size: 10px;
+    }
+
+    .leftCol{
+        display: none;
+    }
+
+    .mainCol{
+        margin-left: 0px;
     }
 
     .services .grid {
