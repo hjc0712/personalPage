@@ -1,5 +1,9 @@
-div {
-    margin: auto;
+/*div {*/
+    /*margin: auto;*/
+/*}*/
+
+section {
+    align-items: baseline;
 }
 
 .profile {
@@ -8,6 +12,10 @@ div {
     padding: 100px 0px;
     padding-left: 10px;
     margin: auto;
+}
+
+h3 {
+    font-family: "Raleway";
 }
 
 .intro {
@@ -30,13 +38,18 @@ div {
 .info {
     font-family: "Big Caslon";
     color: #5e5e5e;
-    font-size: 14px;
+    font-size: 16px;
+    margin: auto;
 }
 
-.info span {
+.experiences , .resources{
+    font-family: "Raleway";
+}
+
+span {
     font-family: 'Raleway';
     color: gray;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .profile hr {
@@ -44,7 +57,6 @@ div {
     border: 1.5px solid #31708f;
     width: 70%;
 }
-
 
 
 @media (max-width: 1100px) {
@@ -63,5 +75,14 @@ div {
 
     .profile hr {
         margin-top: 20px;
+        width: 100%;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+
+    .info span {
+        font-size: 15px;
     }
 }
