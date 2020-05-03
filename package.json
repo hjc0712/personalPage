@@ -1,7 +1,7 @@
 {
-  "name": "crconc",
+  "name": "Jichen Hong's Persoanl Page",
   "version": "1.0.0",
-  "description": "CRCONC Website",
+  "description": "Jichen Hong's Persoanl Page",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -9,21 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Code-Beast/CRCONC.git"
+    "url": "https://github.com/hjc0712/personalPage"
   },
-  "author": "Yufeng Gao",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Code-Beast/CRCONC/issues"
-  },
-  "homepage": "https://github.com/Code-Beast/CRCONC#readme",
+  "author": "Jichen Hong",
+  "homepage": "https://github.com/hjc0712/personalPage",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "method-override": "^3.0.0",
     "mongoose": "^5.3.13",
     "multer": "^1.4.1",
-    "nodemailer": "^5.0.0"
+    "nodemailer": "^5.0.0",
+    "request": "^2.88.2",
+    "url-parse": "^1.4.7"
   }
 }

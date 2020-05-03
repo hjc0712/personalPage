@@ -25,3 +25,4 @@ $(".showBt").click(() =>{
         $(".mainCol").css("margin-left","100px");
     },1000);
 })
+
