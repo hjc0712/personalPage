@@ -33,7 +33,7 @@ $( document ).ready(function(){
         url: '/home/crawler',
         type: 'get',
         success: function(data){
-
+            console.log(data);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             var errorMsg = 'Ajax request failed: ' + xhr.responseText;

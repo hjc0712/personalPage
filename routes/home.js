@@ -61,7 +61,8 @@ router.get('/crawler', (req, res) => {
         crawler(url2, function(links2){
             crawler(url3, function(links3){
                 console.log("sss"+links+links2+links3);
-                res.render('home');
+                var data = "rrr"+links+links2+links3
+                res.send(data);
             })
         })
     });
