@@ -78,7 +78,11 @@ $(".hideBt").click(() =>{
     $(".showBt").css("display","inline");
     setTimeout(function(){
         $(".leftCol").css("display","none");
-        $(".mainCol").css("margin-left","0px");
+        if($("body").width() < 1100) {
+            $(".mainCol").css("margin-left", "0px");
+        }else {
+            $(".mainCol").css("margin-left", "50px");
+        }
     },1000);
 })
 
@@ -91,7 +95,11 @@ $(".showBt").click(() =>{
     setTimeout(function(){
         $(".leftCol").css("display","inline");
         $(".hideBt").css("display","inline");
-        $(".mainCol").css("margin-left","80px");
+        if($("body").width() < 1350) {
+            $(".mainCol").css("margin-left", "100px");
+        } else {
+            $(".mainCol").css("margin-left", "250px");
+        }
     },1000);
 })
 

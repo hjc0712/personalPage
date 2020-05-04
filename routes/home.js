@@ -76,11 +76,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/crawler', (req, res) => {
-    var url = "https://search.yahoo.com/search?p=seattle+condos+Zillow";
-    var url2 = "https://search.yahoo.com/search?p=coronavirus+statistics";
+    var url1 = "https://search.yahoo.com/search?p=coronavirus+statistics";
+    var url2 = "https://search.yahoo.com/search?p=seattle+condos+Zillow";
     var url3 = "https://search.yahoo.com/search?p=javascript+crawler";
     //use call back to make sure, 'res.render' happens after crawler finishing.
-    crawler(url, function ($1) {   //use the returning parameter of callback function
+    crawler(url1, function ($1) {   //use the returning parameter of callback function
         crawler(url2, function($2){
             crawler(url3, function($3){
                 console.log("sss");
