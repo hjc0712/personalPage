@@ -122,6 +122,7 @@ span {
     justify-content: center;
     align-items: center;
 
+    position: relative;
 }
 
 .news-row .piece {
@@ -133,6 +134,18 @@ span {
     color: cornflowerblue;
 }
 
+.news .footnote {
+    color: gray;
+    font-size: 12px;
+    position: absolute;  /*container is relative, use absolute here to appear at the bottom of its container*/
+    bottom: 0px;
+    right: 5px;
+}
+
+.news .footnote button{
+    border: 0px;
+    background: white;
+}
 
 /*main column*/
 .mainCol {
