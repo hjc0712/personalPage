@@ -19,13 +19,18 @@ var transporter = nodemailer.createTransport({
 
 
 function collectLinks($){
-    var allAbsoluteLinks = [];
-    var absoluteLinks = $("a[href^='http']");
-    absoluteLinks.each(function() {
-        allAbsoluteLinks.push($(this).attr('href'));
-    });
 
-    return absoluteLinks.length;
+    var allAbsoluteLinks = [];
+    var allTitles = [];
+    // var absoluteLinks = $("a[href^='http']");
+    var results = $("#web .compTitle a[href^='http']");
+    results.each(function() {
+        allAbsoluteLinks.push($(this).attr('href'));
+        allTitles.push($(this).text());
+    });
+    var res = [allAbsoluteLinks, allTitles];
+
+    return res;
 }
 
 function crawler(url, callback) {
@@ -40,9 +45,10 @@ function crawler(url, callback) {
             // Parse the document body
             var $ = cheerio.load(body);
             console.log("Page title:  " + $('title').text());
-            var links = collectLinks($);
-            console.log(links);
-            callback(links);    //return parameter in call back function
+            var data = collectLinks($);
+            console.log(data[0][0]);
+            console.log(data[1][0]);
+            callback(data);    //return parameter in call back function
         }
     });
 }
@@ -57,12 +63,12 @@ router.get('/crawler', (req, res) => {
     var url2 = "https://search.yahoo.com/search?p=coronavirus+statistics";
     var url3 = "https://search.yahoo.com/search?p=javascript+crawler";
     //use call back to make sure, 'res.render' happens after crawler finishing.
-    crawler(url, function (links) {   //use the returning parameter of callback function
-        crawler(url2, function(links2){
-            crawler(url3, function(links3){
-                console.log("sss"+links+links2+links3);
-                var data = "rrr"+links+links2+links3
-                res.send(data);
+    crawler(url, function (data1) {   //use the returning parameter of callback function
+        crawler(url2, function(data2){
+            crawler(url3, function(data3){
+                console.log("sss");
+                var allData=[data1,data2,data3];
+                res.send(allData);
             })
         })
     });
