@@ -3,6 +3,25 @@ var newsCount = [0,0,0];
 var globalData = [];
 
 // Ajax call for web crawler
+// Ajax call for web crawler
+$( document ).ready(function(){
+    //Perform Ajax request.
+    $.ajax({
+        url: '/home/weatherCrawler',
+        type: 'get',
+        data: {
+            targetUrl:"https://search.yahoo.com/search?p=weather+seattle"
+        },
+        success: function(data){
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            $('#content').html(errorMsg);
+        }
+    });
+});
+
 $( document ).ready(function(){
     //Perform Ajax request.
     $.ajax({
@@ -10,7 +29,6 @@ $( document ).ready(function(){
         type: 'get',
         success: function(allData){
             globalData = allData;
-            console.log("ggg"+allData);
             updateNews(allData[0], 1);
             updateNews(allData[1], 2);
             updateNews(allData[2], 3);
@@ -73,7 +91,7 @@ $(".showBt").click(() =>{
     setTimeout(function(){
         $(".leftCol").css("display","inline");
         $(".hideBt").css("display","inline");
-        $(".mainCol").css("margin-left","100px");
+        $(".mainCol").css("margin-left","80px");
     },1000);
 })
 

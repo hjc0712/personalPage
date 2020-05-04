@@ -33,6 +33,19 @@ function collectLinks($){
     return res;
 }
 
+function getWeather($) {
+    var condtxt = $(".wcards li .ww .condtxt").get(0); //选中了一个长度为5的ELEMENT LIST，使用 .GET(0)来获取第一个ELEMENT
+    var tmpH = $(".wcards li .ww .temp .high").get(0);
+    var tmpL = $(".wcards li .ww .temp .low").get(0);
+
+    var condT =  $(condtxt).text();   //use this way to select the new-generated element
+    var tH = $(tmpH).text();
+    var tL = $(tmpL).text();
+    var weather = [condT, tH, tL];
+    console.log(weather);
+    return weather;
+}
+
 function crawler(url, callback) {
     request(url, function(error, response, body) {
         if(error) {
@@ -45,32 +58,50 @@ function crawler(url, callback) {
             // Parse the document body
             var $ = cheerio.load(body);
             console.log("Page title:  " + $('title').text());
-            var data = collectLinks($);
-            console.log(data[0][0]);
-            console.log(data[1][0]);
-            callback(data);    //return parameter in call back function
+            callback($)
+
+            // var data = collectLinks($);
+            // console.log(data[0][0]);
+            // console.log(data[1][0]);
+            // callback(data);    //return parameter in call back function
         }
     });
 }
 
+
+
+
 router.get('/', (req, res) => {
     res.render('home');
 });
-
 
 router.get('/crawler', (req, res) => {
     var url = "https://search.yahoo.com/search?p=seattle+condos+Zillow";
     var url2 = "https://search.yahoo.com/search?p=coronavirus+statistics";
     var url3 = "https://search.yahoo.com/search?p=javascript+crawler";
     //use call back to make sure, 'res.render' happens after crawler finishing.
-    crawler(url, function (data1) {   //use the returning parameter of callback function
-        crawler(url2, function(data2){
-            crawler(url3, function(data3){
+    crawler(url, function ($1) {   //use the returning parameter of callback function
+        crawler(url2, function($2){
+            crawler(url3, function($3){
                 console.log("sss");
+                var data1 = collectLinks($1);
+                var data2 = collectLinks($2);
+                var data3 = collectLinks($3);
+                console.log(data1[0][0]);
+                console.log(data1[1][0]);
                 var allData=[data1,data2,data3];
                 res.send(allData);
             })
         })
+    });
+});
+
+router.get('/weatherCrawler', (req, res) => {
+    var url = req.query.targetUrl;
+    //use call back to make sure, 'res.render' happens after crawler finishing.
+    crawler(url, function($) {   //use the returning parameter of callback function
+        var data = getWeather($);
+        res.send(data);
     });
 });
 
