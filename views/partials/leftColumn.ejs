@@ -1,0 +1,95 @@
+<!--left side column-->
+<div class="leftCol">
+
+    <div class="login hidden">
+        <form action= "/login" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" id="username" name="username" placeholder="Username" maxlength="256" required autofocus="true" />
+                <br>
+                <input class="form-control" type="text" id="psd" name="psd" placeholder="Password" maxlength="256" required autofocus="true" />
+            </div>
+            <button type="submit" class="btn btn-default" id="submit">Log in</button>
+            <button class="btn btn-default">Sign up</button>
+        </form>
+    </div>
+
+    <div class="weather">
+        <div class="news-row">
+            <img class="spinner" src="/static/img/index/spinner.png">
+            <div class="piece hidden">
+                <div class="date ">
+                    <span><!--leave for the data of "weather-date"--></span>
+                </div>
+                <div class="temp">
+                    <!--leave for the data of "weather-wea"-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="changeCity">
+        <div class="footnote">
+            <p style="display: flex">
+                <input class="form-control" type="text" id="cityInput" placeholder="Type Your City" maxlength="256" required autofocus="true"/>
+                <button style="float: right">Search</button>
+            </p>
+
+        </div>
+    </div>
+    <hr>
+
+    <div class="news">
+        <span>My Recent Intestes</span>
+        <br>
+
+        <div class="news-row" id="no1">
+            <div class="piece">
+                <div class="title">
+                    <span><img class="spinner" src="/static/img/index/spinner.png"></span>
+                </div>
+                <div class="link">
+                    <p></p>
+                </div>
+                <div class="footnote">
+                    <p><button>More about This</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-row" id="no2">
+            <div class="piece">
+                <div class="title">
+                    <span><img class="spinner" src="/static/img/index/spinner.png"></span>
+                </div>
+                <div class="link">
+                    <p></p>
+                </div>
+                <div class="footnote">
+                    <p><button>More about This</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-row" id="no3">
+            <div class="piece">
+                <div class="title">
+                    <span><span><img class="spinner" src="/static/img/index/spinner.png"></span></span>
+                </div>
+                <div class="link">
+                    <p></p>
+                </div>
+                <div class="footnote">
+                    <p><button>More about This</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--2 small button-->
+<div class="showBt">
+    <p> My Crawler <span class="hoverText hideBtText">Reveal</span> </p>
+</div>
+<div class="hideBt">
+    <p> Hide <span class="hoverText hideBtText">Hide</span></p>
+</div>

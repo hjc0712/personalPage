@@ -369,6 +369,16 @@ span {
         to {margin-left: 100px }
     }
 
+    @keyframes mainColSlideout {
+        from {margin-left: 0px}
+        to {margin-left: 0px }
+    }
+
+    @keyframes mainColSlidein {
+        from {margin-left: 0px}
+        to {margin-left: 0px }
+    }
+
     h4 {
         font-size: 10px;
     }
