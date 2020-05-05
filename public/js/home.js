@@ -1,11 +1,12 @@
 
 var newsCount = [0,0,0];
 var globalData = [];
+var weatherIcon =
 
-// Ajax call for web crawler
 // Ajax call for web crawler
 $( document ).ready(function(){
     //Perform Ajax request.
+
     $.ajax({
         url: '/home/weatherCrawler',
         type: 'get',
@@ -13,17 +14,14 @@ $( document ).ready(function(){
             targetUrl:"https://search.yahoo.com/search?p=weather+seattle"
         },
         success: function(data){
-
+            updateWeather(data);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             var errorMsg = 'Ajax request failed: ' + xhr.responseText;
             $('#content').html(errorMsg);
         }
     });
-});
 
-$( document ).ready(function(){
-    //Perform Ajax request.
     $.ajax({
         url: '/home/crawler',
         type: 'get',
@@ -40,6 +38,57 @@ $( document ).ready(function(){
     });
 });
 
+
+function getWeatherIconSrc(wea) {
+    if(wea.endsWith("Rain")){
+        return "/static/img/index/rainy.png";
+    } else if(wea.endsWith("Partly Cloudy")) {
+        return "/static/img/index/partly_cloudy.png";
+    } else if(wea.endsWith("Cloudy")){
+        return "/static/img/index/cloudy.png";
+    } else if(wea.endsWith("Sunny")){
+        return "/static/img/index/sunny.png";
+    } else if(wea.endsWith("Snow")){
+        return "/static/img/index/snowy.png";
+    } else if(wea.endsWith("Showers")){
+        return "/static/img/index/showers.png";
+    } else if(wea.endsWith("Thunderstorms")){
+        return "/static/img/index/thunders.png";
+    } else {
+        return "/static/img/index/partly_cloudy.png";
+    }
+}
+
+function updateWeather (data) {
+    var date = data[3];
+    var wea = data[0];
+    var tmpH = data[1];
+    var tmpL = data[2];
+
+    var p = document.createElement('pre');
+    var text = document.createTextNode(date + "      " + "Seattle");
+    p.appendChild(text);
+    p.class = "dateP";
+    var selector = ".weather .date span";
+    $(selector).html(p);
+
+    var img = document.createElement('img');
+    img.src = getWeatherIconSrc(wea);
+    var p = document.createElement('p');
+    var text = document.createTextNode(wea+" ");
+    p.appendChild(text);
+    p.appendChild(img);
+    p.class = "tempP";
+    var selector = ".weather .temp";
+    $(selector).append(p);
+
+    var p = document.createElement('p');
+    var text = document.createTextNode(tmpL + "F - " + tmpH + "F");
+    p.appendChild(text);
+    p.class = "tempP";
+    var selector = ".weather .temp";
+    $(selector).append(p);
+}
 
 function updateNews (news, number){
 
@@ -81,7 +130,7 @@ $(".hideBt").click(() =>{
         if($("body").width() < 1100) {
             $(".mainCol").css("margin-left", "0px");
         }else {
-            $(".mainCol").css("margin-left", "50px");
+            $(".mainCol").css("margin-left", "0px");
         }
     },1000);
 })

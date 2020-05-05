@@ -189,6 +189,24 @@ span {
     background: white;
 }
 
+.weather .news-row{
+    border: 0px;
+}
+
+.weather .news-row pre{
+    font-size: 18px;
+    font-family: 'Raleway';
+    background: white;
+    color: gray;
+    border: 0px;
+}
+
+.weather .news-row p{
+    font-size: 15px;
+    font-family: 'Raleway';
+    color: black;
+}
+
 /*main column*/
 .mainCol {
     margin-left: 250px;
@@ -197,11 +215,11 @@ span {
 
 @keyframes mainColSlideout {
     from {margin-left: 250px }
-    to {margin-left: 50px }
+    to {margin-left: 0px }
 }
 
 @keyframes mainColSlidein {
-    from {margin-left: 50px}
+    from {margin-left: 0px}
     to {margin-left: 250px }
 }
 
@@ -307,11 +325,11 @@ span {
 
     @keyframes mainColSlideout {
         from {margin-left: 100px}
-        to {margin-left: 50px }
+        to {margin-left: 0px }
     }
 
     @keyframes mainColSlidein {
-        from {margin-left: 50px}
+        from {margin-left: 0px}
         to {margin-left: 100px }
     }
 }
@@ -394,9 +412,10 @@ span {
     .services {
         margin-bottom: 100px;
         padding: 20px 40px;
+        padding-top: 90px;
     }
 
     .services .grid li {
-        height: 144px;
+        height: 136px;
     }
 }

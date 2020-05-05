@@ -37,11 +37,13 @@ function getWeather($) {
     var condtxt = $(".wcards li .ww .condtxt").get(0); //选中了一个长度为5的ELEMENT LIST，使用 .GET(0)来获取第一个ELEMENT
     var tmpH = $(".wcards li .ww .temp .high").get(0);
     var tmpL = $(".wcards li .ww .temp .low").get(0);
+    var date = $(".wcards li .day span").get(0);
 
     var condT =  $(condtxt).text();   //use this way to select the new-generated element
     var tH = $(tmpH).text();
     var tL = $(tmpL).text();
-    var weather = [condT, tH, tL];
+    var dt = $(date).text();
+    var weather = [condT, tH, tL, dt];
     console.log(weather);
     return weather;
 }

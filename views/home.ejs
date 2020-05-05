@@ -12,7 +12,8 @@
 
         <!--left side column-->
         <div class="leftCol">
-            <div class="login">
+
+            <div class="login hidden">
                 <form action= "/login" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="text" id="username" name="username" placeholder="Username" maxlength="256" required autofocus="true" />
@@ -23,6 +24,22 @@
                     <button class="btn btn-default">Sign up</button>
                 </form>
             </div>
+
+            <div class="weather">
+                <div class="news-row">
+                    <div class="piece">
+                        <div class="date">
+                            <span><img class="spinner" src="/static/img/index/spinner.png"></span>
+                        </div>
+                        <div class="temp">
+
+                        </div>
+                        <div class="footnote hidden">
+                            <p><button>More about This</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <hr>
 
             <div class="news">
@@ -32,7 +49,7 @@
                 <div class="news-row" id="no1">
                     <div class="piece">
                         <div class="title">
-                            <span><span><img class="spinner" src="/static/img/index/spinner.png"></span></span>
+                            <span><img class="spinner" src="/static/img/index/spinner.png"></span>
                         </div>
                         <div class="link">
                             <p></p>
@@ -84,7 +101,7 @@
         <!--main column-->
         <section class="services">
             <div class="mainCol">
-                <hr>
+                <!--<hr>-->
                 <ul class="grid">
                     <li class="large">
                         <h3>MY PROFILE</h3>
