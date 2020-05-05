@@ -27,17 +27,25 @@
 
             <div class="weather">
                 <div class="news-row">
-                    <div class="piece">
-                        <div class="date">
-                            <span><img class="spinner" src="/static/img/index/spinner.png"></span>
+                    <img class="spinner" src="/static/img/index/spinner.png">
+                    <div class="piece hidden">
+                        <div class="date ">
+                            <span><!--leave for the data of "weather-date"--></span>
                         </div>
                         <div class="temp">
-
-                        </div>
-                        <div class="footnote hidden">
-                            <p><button>More about This</button></p>
+                            <!--leave for the data of "weather-wea"-->
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="changeCity">
+                <div class="footnote">
+                    <p style="display: flex">
+                        <input class="form-control" type="text" id="cityInput" placeholder="Type Your City" maxlength="256" required autofocus="true"/>
+                        <button style="float: right">Search</button>
+                    </p>
+
                 </div>
             </div>
             <hr>

@@ -119,6 +119,7 @@ span {
 
 .news {
     margin: 40px 10px;
+    margin-bottom: 100px;
 }
 
 .news-row {
@@ -176,7 +177,7 @@ span {
     to {transform: rotate(359deg);}
 }
 
-.news .footnote {
+.leftCol .footnote {
     color: gray;
     font-size: 12px;
     position: absolute;  /*container is relative, use absolute here to appear at the bottom of its container*/
@@ -184,7 +185,7 @@ span {
     right: 5px;
 }
 
-.news .footnote button{
+.leftCol .footnote button{
     border: 0px;
     background: white;
 }
@@ -205,6 +206,16 @@ span {
     font-size: 15px;
     font-family: 'Raleway';
     color: black;
+}
+
+.changeCity {
+    height: 40px;
+    position: relative;
+}
+
+.changeCity input{
+    font-size: 12px;
+    height: 20px;
 }
 
 /*main column*/

@@ -7,29 +7,20 @@ var weatherIcon =
 $( document ).ready(function(){
     //Perform Ajax request.
 
-    $.ajax({
-        url: '/home/weatherCrawler',
-        type: 'get',
-        data: {
-            targetUrl:"https://search.yahoo.com/search?p=weather+seattle"
-        },
-        success: function(data){
-            updateWeather(data);
-        },
-        error: function (xhr, ajaxOptions, thrownError) {
-            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-            $('#content').html(errorMsg);
-        }
-    });
+    //Ajax call 1
+    weatherCrawlerAjax("seattle");
 
+    //Ajax call 2
     $.ajax({
-        url: '/home/crawler',
+        url: '/home/newsCrawler',
         type: 'get',
         success: function(allData){
-            globalData = allData;
-            updateNews(allData[0], 1);
-            updateNews(allData[1], 2);
-            updateNews(allData[2], 3);
+            if(allData != "error") {
+                globalData = allData;
+                updateNews(allData[0], 1);
+                updateNews(allData[1], 2);
+                updateNews(allData[2], 3);
+            }
         },
         error: function (xhr, ajaxOptions, thrownError) {
             var errorMsg = 'Ajax request failed: ' + xhr.responseText;
@@ -38,6 +29,27 @@ $( document ).ready(function(){
     });
 });
 
+
+
+
+function weatherCrawlerAjax(city){
+    $.ajax({
+        url: '/home/weatherCrawler',
+        type: 'get',
+        data: {
+            targetUrl: city
+        },
+        success: function(data){
+            if(data != "error") {
+                updateWeather(data, city);
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+            $('#content').html(errorMsg);
+        }
+    });
+}
 
 function getWeatherIconSrc(wea) {
     if(wea.endsWith("Rain")){
@@ -59,19 +71,25 @@ function getWeatherIconSrc(wea) {
     }
 }
 
-function updateWeather (data) {
+function updateWeather (data, city) {
     var date = data[3];
     var wea = data[0];
     var tmpH = data[1];
     var tmpL = data[2];
 
+    //Remove the loading img & reveal the weather block
+    $(".weather img").addClass("hidden");
+    $(".weather .piece").removeClass("hidden");
+
+    //generate the "weather-date" part
     var p = document.createElement('pre');
-    var text = document.createTextNode(date + "      " + "Seattle");
+    var text = document.createTextNode(date + "      " + city);
     p.appendChild(text);
     p.class = "dateP";
     var selector = ".weather .date span";
     $(selector).html(p);
 
+    //generate the "weather-wea" part
     var img = document.createElement('img');
     img.src = getWeatherIconSrc(wea);
     var p = document.createElement('p');
@@ -80,7 +98,7 @@ function updateWeather (data) {
     p.appendChild(img);
     p.class = "tempP";
     var selector = ".weather .temp";
-    $(selector).append(p);
+    $(selector).html(p);
 
     var p = document.createElement('p');
     var text = document.createTextNode(tmpL + "F - " + tmpH + "F");
@@ -90,8 +108,8 @@ function updateWeather (data) {
     $(selector).append(p);
 }
 
+// When the 'more about this button is clicked'
 function updateNews (news, number){
-
     var index = (newsCount[number-1]) % (globalData[number-1][0].length);
     var title = news[1][index]; //
     var url = news[0][index];
@@ -166,4 +184,15 @@ $(".news #no2 button").click(() => {
 $(".news #no3 button").click(() => {
     newsCount[2] ++;
     updateNews(globalData[2], 3);
+})
+
+// Change weather city button
+$(".changeCity button").click(() => {
+    var input = $("#cityInput");
+    var city = input.val();
+    weatherCrawlerAjax(city);
+
+    input.val('');
+    $(".weather img").removeClass("hidden"); // Reveal the loading img
+    $(".weather .piece").addClass("hidden"); // Clear the preview weather results.
 })
