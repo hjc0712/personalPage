@@ -148,7 +148,6 @@ function crawler(url, callback) {
             if (response.statusCode === 200) {
                 // Parse the document body
                 var $ = cheerio.load(body);
-                console.log("Page title:  " + $('title').text());
                 callback(null, $) //return parameter in call back function (null is the error field)
             }
         }

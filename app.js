@@ -7,6 +7,7 @@ const express = require('express'),
 const indexRoutes = require('./routes/index'),
     homeRoutes = require('./routes/home'),
     projectRoutes = require('./routes/project'),
+    idolsRoutes = require('./routes/idols'),
   basicRoutes = require('./routes/basic'),
   serviceRoutes = require('./routes/services'),
   referenceRoutes = require('./routes/references'),
@@ -22,6 +23,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexRoutes);
 app.use('/home', homeRoutes);
 app.use('/project', projectRoutes);
+app.use('/idols', idolsRoutes);
 app.use('/basic', basicRoutes);
 app.use('/services', serviceRoutes);
 app.use('/references', referenceRoutes);

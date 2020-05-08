@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" type="text/css" href="/static/css/idols/idols.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+<%- include("../partials/contactModal", {currentUrl:"/home"}); %>
+<% include ../partials/leftColumn %>
+
+<div class="mainCol">
+    <section class="subMainCol idols">
+
+        <div class="subHero">
+            <div class="title">
+                <p><span>MY IDOLS</span></p>
+                <p>Sport & Music & Movies</p>
+            </div>
+            <div class="image">
+                <img class="heroImg" src="/static/img/index/idol.jpg">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="subPageMainBody">
+
+            <ul class="nav nav-tabs">
+                <li id="sport-btn" role="presentation" class="active"><a>SPORT</a></li>
+                <li id="music-btn" role="presentation"><a>MUSIC</a></li>
+                <li id="movie-btn" role="presentation"><a>MOVIE</a></li>
+            </ul>
+
+            <br>
+
+            <div id="sport-div">
+                <div class="idolsItems" id="idol0">
+                    <div class="left">
+                        <img src="/static/img/idols/curry.jpg">
+                        <p><span>Steph Curry</span></p>
+                        <p><a href="">Profile</a> </p>
+                    </div>
+                    <div class="right">
+                        <p><span>Recent News</span></p>
+                        <div class="idol-news" id="0">
+
+                        </div>
+                        <div class="idol-news" id="1">
+
+                        </div>
+                        <div class="idol-news" id="2">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="idolsItems">
+                    <div class="left">
+                        <p><span>Hammer--Fairy--YOLOv3</span></p>
+                        <p>Real time object detection based on YOLO3 DL framwork</p>
+                    </div>
+                    <div class="right">
+                        <p class="python"><span>Python</span></p>
+                        <p class="ai"><span>AI (CV)</span></p>
+                    </div>
+                </div>
+
+                <div class="idolsItems">
+                    <div class="left">
+                        <p><span>personalPage</span></p>
+                        <p>Jichen Hong's personal page</p>
+                    </div>
+                    <div class="right">
+                        <p class="javascript"><span>Javascript</span></p>
+                        <p class="fullstack"><span>Full Stack</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="music-div" class="hidden">
+                <a href="https://github.com/hjc0712/Spark-Big-Data-and-Nerual-Network">
+                    <div class="projectItems">
+                        <div class="left">
+                            <p><span>Spark-Big-Data-and-Nerual-Network </span></p>
+                            <p></p>
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>Python</span></p>
+                            <p class="ai"><span>AI (Big Data)</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://github.com/hjc0712/OS-UMIX">
+                    <div class="projectItems">
+                        <div class="left">
+                            <p><span>OS-UMIX</span></p>
+                            <p>UMIX operation system design</p>
+                        </div>
+                        <div class="right">
+                            <p class="c"><span>C</span></p>
+                            <p class="system"><span>System</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://github.com/hjc0712/llvm-workflow-design">
+                    <div class="projectItems">
+                        <div class="left">
+                            <p><span>llvm-workflow-design</span></p>
+                            <p></p>
+                        </div>
+                        <div class="right">
+                            <p class="c"><span>C++</span></p>
+                            <p class="system"><span>System</span></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="movie-div" class="hidden">
+                <a href="https://github.com/hjc0712/CRCONC-web-application">
+                    <div class="projectItems">
+                        <div class="left">
+                            <p><span>CRCONC-web-application</span></p>
+                            <p>commercial website of CRCONC</p>
+                        </div>
+                        <div class="right">
+                            <p class="javascript"><span>Javascript</span></p>
+                            <p class="fullstack"><span>Full Stack</span></p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/hjc0712/Elo-Merchant-Category-Recommendation">
+                    <div class="projectItems">
+                        <div class="left">
+                            <p><span>Elo-Merchant-Category-Recommendation</span></p>
+                            <p>Big data analysis based on lightgbm and classical ML model</p>
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>Python</span></p>
+                            <p class="ai"><span>AI (RS)</span></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+</div>
+
+
+
+
+<% include ../partials/scripts %>
+<script src="/static/js/leftColumn.js"></script>
+<script src="/static/js/idols.js"></script>
+</body>
+</html>
