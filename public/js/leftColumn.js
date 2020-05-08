@@ -1,7 +1,7 @@
 // Global Parameters ----------------------------------------
 var newsCount = [0,0,0];
-var globalData = [];
-var weatherIcon =
+var globalData = [];  //data for the news in my recent interests
+var globalCity = "seattle";
 
 // Events ---------------------------------------------------
 // Onloading Ajax call for web crawler
@@ -9,7 +9,7 @@ $( document ).ready(function(){
     //Perform Ajax request.
 
     //Ajax call 1
-    weatherCrawlerAjax("seattle");
+    weatherCrawlerAjax(globalCity);
 
     //Ajax call 2
     $.ajax({
@@ -70,17 +70,32 @@ $(".showBt").click(() =>{
 // More news button
 $(".news #no1 button").click(() => {
     newsCount[0] ++;
+    $(".news #no1 .piece").css("animation","1.1s fadein 0s"); // for fadein
+
     updateNews(globalData[0], 1);
+    setTimeout(() => {
+        $(".news #no1 .piece").css({"animation" : ""}); // for next fadein
+    }, 1000);
 })
 
 $(".news #no2 button").click(() => {
     newsCount[1] ++;
+    $(".news #no2 .piece").css("animation","1.1s fadein 0s");
+
     updateNews(globalData[1], 2);
+    setTimeout(() => {
+        $(".news #no2 .piece").css({"animation" : ""});
+    }, 1000);
 })
 
 $(".news #no3 button").click(() => {
     newsCount[2] ++;
+    $(".news #no3 .piece").css("animation","1.1s fadein 0s");
+
     updateNews(globalData[2], 3);
+    setTimeout(() => {
+        $(".news #no3 .piece").css({"animation" : ""});
+    }, 1000);
 })
 
 // Change weather city button
@@ -121,6 +136,7 @@ function weatherCrawlerAjax(city){
 
 // Called by the weatherCrawler Ajax
 function updateWeather (data, city) {
+    globalCity = city;
     var date = data[3];
     var wea = data[0];
     var tmpH = data[1];

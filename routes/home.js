@@ -17,59 +17,7 @@ var transporter = nodemailer.createTransport({
 
 
 
-// called by newsCrawler, Get the links for 'my recent interets news'
-function collectLinks($){
-    var allAbsoluteLinks = [];
-    var allTitles = [];
-    // var absoluteLinks = $("a[href^='http']");
-    var results = $("#web .compTitle a[href^='http']");
-    results.each(function () {
-        allAbsoluteLinks.push($(this).attr('href'));
-        allTitles.push($(this).text());
-    });
-    var res = [allAbsoluteLinks, allTitles];
-
-    return res;
-}
-
-// called by weatherCraler, Get the data for weather
-function getWeather($) {
-    var condtxt = $(".wcards li .ww .condtxt").get(0); //选中了一个长度为5的ELEMENT LIST，使用 .GET(0)来获取第一个ELEMENT
-    var tmpH = $(".wcards li .ww .temp .high").get(0);
-    var tmpL = $(".wcards li .ww .temp .low").get(0);
-    var date = $(".wcards li .day span").get(0);
-
-    var condT = $(condtxt).text();   //use this way to select the new-generated element
-    var tH = $(tmpH).text();
-    var tL = $(tmpL).text();
-    var dt = $(date).text();
-    var weather = [condT, tH, tL, dt];
-    console.log(weather);
-    return weather;
-}
-
-// called by both crawler, return the document boty
-function crawler(url, callback) {
-    request(url, function(error, response, body) {
-        if(error) {
-            console.log("Error: " + error);
-            callback(new Error(error));
-        } else {                // must need this else, js doesn't return after calling 'callback'
-            // Check status code (200 is HTTP OK)
-            console.log("Status code: " + response.statusCode);
-            if (response.statusCode === 200) {
-                // Parse the document body
-                var $ = cheerio.load(body);
-                console.log("Page title:  " + $('title').text());
-                callback(null, $) //return parameter in call back function (null is the error field)
-            }
-        }
-    });
-}
-
-
-
-
+// router
 router.get('/', (req, res) => {
     res.render('home');
 });
@@ -126,12 +74,9 @@ router.get('/weatherCrawler', (req, res) => {
 
 });
 
-
-
 router.get('/profile',(req,res) => {
     res.render('profile/profile');
 });
-
 
 router.post('/', (req, res) => {
     var ejsname = req.body.name;
@@ -146,7 +91,6 @@ router.post('/', (req, res) => {
         subject: 'Contact from '+ ejsname,
         text: 'name: '+ejsname + '\n' +'email: ' + ejsemail + '\n' +'subject: ' + ejssubject + '\n' +'message: ' + ejsmessage
     };
-
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
             console.log(error);
@@ -157,6 +101,63 @@ router.post('/', (req, res) => {
         }
     });
 });
+
+
+
+
+// called by newsCrawler, Get the links for 'my recent interets news'
+function collectLinks($){
+    var allAbsoluteLinks = [];
+    var allTitles = [];
+    // var absoluteLinks = $("a[href^='http']");
+    var results = $("#web .compTitle a[href^='http']");
+    results.each(function () {
+        allAbsoluteLinks.push($(this).attr('href'));
+        allTitles.push($(this).text());
+    });
+    var res = [allAbsoluteLinks, allTitles];
+
+    return res;
+}
+
+// called by weatherCraler, Get the data for weather
+function getWeather($) {
+    var condtxt = $(".wcards li .ww .condtxt").get(0); //选中了一个长度为5的ELEMENT LIST，使用 .GET(0)来获取第一个ELEMENT
+    var tmpH = $(".wcards li .ww .temp .high").get(0);
+    var tmpL = $(".wcards li .ww .temp .low").get(0);
+    var date = $(".wcards li .day span").get(0);
+
+    var condT = $(condtxt).text();   //use this way to select the new-generated element
+    var tH = $(tmpH).text();
+    var tL = $(tmpL).text();
+    var dt = $(date).text();
+    var weather = [condT, tH, tL, dt];
+    console.log(weather);
+    return weather;
+}
+
+// called by both crawler, return the document boty
+function crawler(url, callback) {
+    request(url, function(error, response, body) {
+        if(error) {
+            console.log("Error: " + error);
+            callback(new Error(error));
+        } else {                // must need this else, js doesn't return after calling 'callback'
+            // Check status code (200 is HTTP OK)
+            console.log("Status code: " + response.statusCode);
+            if (response.statusCode === 200) {
+                // Parse the document body
+                var $ = cheerio.load(body);
+                console.log("Page title:  " + $('title').text());
+                callback(null, $) //return parameter in call back function (null is the error field)
+            }
+        }
+    });
+}
+
+
+
+
 
 
 module.exports = router;

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" type="text/css" href="/static/css/project/project.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+<%- include("../partials/contactModal", {currentUrl:"/home"}); %>
+<% include ../partials/leftColumn %>
+
+<div class="mainCol">
+    <section class="subMainCol project">
+
+        <div class="subHero">
+            <div class="title">
+                <p><span>MY PROJECTS</span></p>
+                <p>Full stack & AI & ...</p>
+            </div>
+            <div class="image">
+                <img class="heroImg" src="/static/img/index/project.jpg">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="subPageMainBody">
+            <a href="https://github.com/hjc0712/Distributed_storage_server-and-Raft">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>Distributed_storage_server-and-Raft</span></p>
+                        <p>A distributed storage system supported by RAFT protocol </p>
+                    </div>
+                    <div class="right">
+                        <p class="python"><span>Python</span></p>
+                        <p class="system"><span>System</span></p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/hjc0712/Hammer--Fairy--YOLOv3">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>Hammer--Fairy--YOLOv3</span></p>
+                        <p>Real time object detection based on YOLO3 DL framwork</p>
+                    </div>
+                    <div class="right">
+                        <p class="python"><span>Python</span></p>
+                        <p class="ai"><span>AI (CV)</span></p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/hjc0712/personalPage">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>personalPage</span></p>
+                        <p>Jichen Hong's personal page</p>
+                    </div>
+                    <div class="right">
+                        <p class="javascript"><span>Javascript</span></p>
+                        <p class="fullstack"><span>Full Stack</span></p>
+                    </div>
+                </div>
+            <a href="https://github.com/hjc0712/Spark-Big-Data-and-Nerual-Network">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>Spark-Big-Data-and-Nerual-Network </span></p>
+                        <p></p>
+                    </div>
+                    <div class="right">
+                        <p class="python"><span>Python</span></p>
+                        <p class="ai"><span>AI (Big Data)</span></p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/hjc0712/OS-UMIX">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>OS-UMIX</span></p>
+                        <p>UMIX operation system design</p>
+                    </div>
+                    <div class="right">
+                        <p class="c"><span>C</span></p>
+                        <p class="system"><span>System</span></p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/hjc0712/llvm-workflow-design">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>llvm-workflow-design</span></p>
+                        <p></p>
+                    </div>
+                    <div class="right">
+                        <p class="c"><span>C++</span></p>
+                        <p class="system"><span>System</span></p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/hjc0712/CRCONC-web-application">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>CRCONC-web-application</span></p>
+                        <p>commercial website of CRCONC</p>
+                    </div>
+                    <div class="right">
+                        <p class="javascript"><span>Javascript</span></p>
+                        <p class="fullstack"><span>Full Stack</span></p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/hjc0712/Elo-Merchant-Category-Recommendation">
+                <div class="projectItems">
+                    <div class="left">
+                        <p><span>Elo-Merchant-Category-Recommendation</span></p>
+                        <p>Big data analysis based on lightgbm and classical ML model</p>
+                    </div>
+                    <div class="right">
+                        <p class="python"><span>Python</span></p>
+                        <p class="ai"><span>AI (RS)</span></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </section>
+</div>
+
+
+
+
+<% include ../partials/scripts %>
+<script src="/static/js/leftColumn.js"></script>
+</body>
+</html>

@@ -2,7 +2,6 @@
 <html>
 <head>
     <% include ../partials/head %>
-    <link rel="stylesheet" type="text/css" href="/static/css/home/styles.css">
     <link rel="stylesheet" type="text/css" href="/static/css/home/profile.css">
 </head>
 <body>
@@ -10,8 +9,9 @@
 <%- include("../partials/contactModal", {currentUrl:"/home"}); %>
 <% include ../partials/leftColumn %>
 
-<section class="profile">
-    <div class="mainCol">
+<div class="mainCol">
+
+    <section class="profile">
         <div class="intro-web">
             <div class="intro">
                 <div class="photo">
@@ -77,8 +77,8 @@
                     <p><span>Linkedin:&nbsp;</span> <a href="https://www.linkedin.com/in/jichen-hong">https://www.linkedin.com/in/jichen-hong</a></p>
                 </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
 
 
