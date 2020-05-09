@@ -1,3 +1,9 @@
+
+.subHero, .subHero span{
+    background: #3b4f67;
+    color:whitesmoke;
+}
+
 .subPageMainBody {
     width: 70%;
 }

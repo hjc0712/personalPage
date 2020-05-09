@@ -26,30 +26,30 @@ router.get('/newsCrawler', (req, res) => {
     var url1 = "https://search.yahoo.com/search?p=coronavirus+statistics";
     var url2 = "https://search.yahoo.com/search?p=seattle+condos+Zillow";
     var url3 = "https://search.yahoo.com/search?p=javascript+crawler";
+    var urls = [url1, url2, url3];
+    var allData = [];
+    var count = 0;
     //use call back to make sure, 'res.render' happens after crawler finishing.
-    crawler(url1, function (err, $1) {   //use the returning parameter of callback function
-        if(err) {res.send("error");}
-        else {
-            crawler(url2, function (err, $2) {
-                if(err) {res.send("error");}
-                else {
-                    crawler(url3, function (err, $3) {
-                        if(err) {res.send("error");}
-                        else {
-                            console.log("sss");
-                            var data1 = collectLinks($1);
-                            var data2 = collectLinks($2);
-                            var data3 = collectLinks($3);
-                            console.log(data1[0][0]);
-                            console.log(data1[1][0]);
-                            var allData = [data1, data2, data3];
-                            res.send(allData);
-                        }
-                    })
+
+    for (var i=0; i<3; i++) {
+
+        crawler(urls[i], i, function (err, $, cur) {   //use the returning parameter of callback function
+            if (err) {
+                allData[cur] = "error";
+                count++;
+            }
+            else {
+                console.log("sss");
+                allData[cur] = collectLinks($);
+                count++;
+                if(count >= 3) {
+                    console.log(allData[0][0][0]);
+                    console.log(allData[0][1][0]);
+                    res.send(allData);
                 }
-            })
-        }
-    });
+            }
+        });
+    }
 });
 
 router.get('/weatherCrawler', (req, res) => {
@@ -62,7 +62,7 @@ router.get('/weatherCrawler', (req, res) => {
     var url = "https://search.yahoo.com/search?p=weather+" + city;
 
     //use call back to make sure, 'res.render' happens after crawler finishing.
-    crawler(url, function (err, $) {   //use the returning parameter of callback function
+    crawler(url, 1, function (err, $) {   //use the returning parameter of callback function
         if(err) {
             console.log("aaaaaa" + $);
             res.send("error");
@@ -137,7 +137,7 @@ function getWeather($) {
 }
 
 // called by both crawler, return the document boty
-function crawler(url, callback) {
+function crawler(url, i, callback) {
     request(url, function(error, response, body) {
         if(error) {
             console.log("Error: " + error);
@@ -148,7 +148,7 @@ function crawler(url, callback) {
             if (response.statusCode === 200) {
                 // Parse the document body
                 var $ = cheerio.load(body);
-                callback(null, $) //return parameter in call back function (null is the error field)
+                callback(null, $, i) //return parameter in call back function (null is the error field)
             }
         }
     });

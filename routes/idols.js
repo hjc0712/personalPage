@@ -45,29 +45,6 @@ router.get('/getIdolNews', (req, res) => {
 
 
 //JS functions
-function multiCrawler(urls, callback) {
-    var allData = [0,0,0];
-    var count = 0;
-
-    for (var i=0; i < urls.length; i++){
-        var url = urls[i];
-        //use call back to make sure, 'res.render' happens after crawler finishing.
-        crawler(url, function (err, $) {   //use the returning parameter of callback function
-            if(err) {
-                console.log("aaaaaa" + $);
-                allData[0] = "error";
-                count++;
-            } else {
-                var data = getIdolNews($);
-                allData[i] = data;
-                count++;
-                console.log("count=",count);
-            }
-        });
-    }
-
-}
-
 function crawler(url, cur, callback) {
     request(url, function(error, response, body) {
         if(error) {

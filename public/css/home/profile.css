@@ -2,15 +2,13 @@
     /*margin: auto;*/
 /*}*/
 
-section {
-    align-items: baseline;
+
+.subPageMainBody {
+    width: 70%;
 }
 
-.profile {
-    width: 70%;
-    max-width: 1000px;
-    padding: 100px 0px;
-    margin: auto;
+.subHero{
+    background: #f8f9f4;
 }
 
 h3 {
