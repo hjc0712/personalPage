@@ -67,12 +67,13 @@ function getIdolNews($){
     var allAbsoluteLinks = [];
     var allTitles = [];
     // var absoluteLinks = $("a[href^='http']");
-    var results = $(".compTitle a[href^='http']");
+    var results = $(".compArticleList h4 a[href^='http']");
+    var vedioResults = $(".Vedio .compTitle a[href^='http']");
     results.each(function () {
         allAbsoluteLinks.push($(this).attr('href'));
         allTitles.push($(this).text());
     });
-    var res = [allAbsoluteLinks.slice(0,3), allTitles.slice(0,3)];
+    var res = [allAbsoluteLinks, allTitles];
 
     return res;
 }

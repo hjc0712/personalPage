@@ -8,6 +8,8 @@
 <% include ../partials/navbar %>
 <%- include("../partials/contactModal", {currentUrl:"/home"}); %>
 <% include ../partials/leftColumn %>
+<% include newsThumb %>
+
 
 <div class="mainCol">
     <section class="subMainCol idols">
@@ -43,109 +45,40 @@
                     </div>
                     <div class="right">
                         <p><span>Recent News</span></p>
-                        <div class="idol-news" id="0">
-
-                        </div>
-                        <div class="idol-news" id="1">
-
-                        </div>
-                        <div class="idol-news" id="2">
-
+                        <div class="idol-news">
+                            <span><span><img class="spinner" src="/static/img/index/spinner.png"></span></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="idolsItems">
+                <div class="idolsItems" id="idol1">
                     <div class="left">
                         <p><span>Hammer--Fairy--YOLOv3</span></p>
                         <p>Real time object detection based on YOLO3 DL framwork</p>
                     </div>
                     <div class="right">
-                        <p class="python"><span>Python</span></p>
-                        <p class="ai"><span>AI (CV)</span></p>
+                        <p><span>Recent News</span></p>
+                        <div class="idol-news">
+                            <span><span><img class="spinner" src="/static/img/index/spinner.png"></span></span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="idolsItems">
+                <div class="idolsItems" id="idol2">
                     <div class="left">
                         <p><span>personalPage</span></p>
                         <p>Jichen Hong's personal page</p>
                     </div>
                     <div class="right">
-                        <p class="javascript"><span>Javascript</span></p>
-                        <p class="fullstack"><span>Full Stack</span></p>
+                        <p><span>Recent News</span></p>
+                        <div class="idol-news">
+                            <span><span><img class="spinner" src="/static/img/index/spinner.png"></span></span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div id="music-div" class="hidden">
-                <a href="https://github.com/hjc0712/Spark-Big-Data-and-Nerual-Network">
-                    <div class="projectItems">
-                        <div class="left">
-                            <p><span>Spark-Big-Data-and-Nerual-Network </span></p>
-                            <p></p>
-                        </div>
-                        <div class="right">
-                            <p class="python"><span>Python</span></p>
-                            <p class="ai"><span>AI (Big Data)</span></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://github.com/hjc0712/OS-UMIX">
-                    <div class="projectItems">
-                        <div class="left">
-                            <p><span>OS-UMIX</span></p>
-                            <p>UMIX operation system design</p>
-                        </div>
-                        <div class="right">
-                            <p class="c"><span>C</span></p>
-                            <p class="system"><span>System</span></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://github.com/hjc0712/llvm-workflow-design">
-                    <div class="projectItems">
-                        <div class="left">
-                            <p><span>llvm-workflow-design</span></p>
-                            <p></p>
-                        </div>
-                        <div class="right">
-                            <p class="c"><span>C++</span></p>
-                            <p class="system"><span>System</span></p>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
-            <div id="movie-div" class="hidden">
-                <a href="https://github.com/hjc0712/CRCONC-web-application">
-                    <div class="projectItems">
-                        <div class="left">
-                            <p><span>CRCONC-web-application</span></p>
-                            <p>commercial website of CRCONC</p>
-                        </div>
-                        <div class="right">
-                            <p class="javascript"><span>Javascript</span></p>
-                            <p class="fullstack"><span>Full Stack</span></p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="https://github.com/hjc0712/Elo-Merchant-Category-Recommendation">
-                    <div class="projectItems">
-                        <div class="left">
-                            <p><span>Elo-Merchant-Category-Recommendation</span></p>
-                            <p>Big data analysis based on lightgbm and classical ML model</p>
-                        </div>
-                        <div class="right">
-                            <p class="python"><span>Python</span></p>
-                            <p class="ai"><span>AI (RS)</span></p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
 
     </section>
 </div>
