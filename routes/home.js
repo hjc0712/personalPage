@@ -86,7 +86,7 @@ router.post('/', (req, res) => {
 
     // console.log(req.body.name);
     var mailOptions = {
-        from: 'hjc0712@163.com',
+        from: 'develop_hjc@163.com',
         to: 'hongjichen0712@gmail.com',
         subject: 'Contact from '+ ejsname,
         text: 'name: '+ejsname + '\n' +'email: ' + ejsemail + '\n' +'subject: ' + ejssubject + '\n' +'message: ' + ejsmessage
