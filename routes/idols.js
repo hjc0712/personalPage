@@ -69,9 +69,14 @@ function getIdolNews($){
     // var absoluteLinks = $("a[href^='http']");
     var results = $(".compArticleList h4 a[href^='http']");
     var vedioResults = $(".Vedio .compTitle a[href^='http']");
+    if(results.children().length === 0){
+        results = $(".algo-sr h3 a[href^='http']");
+    }
     results.each(function () {
-        allAbsoluteLinks.push($(this).attr('href'));
-        allTitles.push($(this).text());
+        if(allAbsoluteLinks.length < 3){
+            allAbsoluteLinks.push($(this).attr('href'));
+            allTitles.push($(this).text());
+        }
     });
     var res = [allAbsoluteLinks, allTitles];
 

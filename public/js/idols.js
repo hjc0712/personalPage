@@ -1,22 +1,71 @@
-
+var musicCrawlerDone = false;
+var movieCrawlerDone = false;
 
 $( document ).ready(function(){
     //Perform Ajax request.
 
+    //Ajax call 2
+    AjaxGetIdolNews(["steph+curry+news", "steve+nash+news", "kaka+news"], "sport");
+
+});
+
+
+$("#sport-btn").click(function(){
+    $("#sport-div").removeClass("hidden");
+    $("#movie-div").addClass("hidden");
+    $("#music-div").addClass("hidden");
+
+    $(".nav-tabs .active").removeClass("active");
+    $(".nav-tabs #sport-btn").addClass("active");
+});
+
+$("#music-btn").click(function(){
+    $("#sport-div").addClass("hidden");
+    $("#movie-div").addClass("hidden");
+    $("#music-div").removeClass("hidden");
+
+    $(".nav-tabs .active").removeClass("active");
+    $(".nav-tabs #music-btn").addClass("active");
 
     //Ajax call 2
+    if (!musicCrawlerDone) {
+        musicCrawlerDone = true;
+        AjaxGetIdolNews(["JJ+Lin+news", "Tia+ray+singer", "Taylor+swift+news"], "music");
+    }
+});
+
+$("#movie-btn").click(function(){
+    $("#sport-div").addClass("hidden");
+    $("#music-div").addClass("hidden");
+    $("#movie-div").removeClass("hidden");
+
+    $(".nav-tabs .active").removeClass("active");
+    $(".nav-tabs #movie-btn").addClass("active");
+
+    //Ajax call 2
+    if (!movieCrawlerDone) {
+        movieCrawlerDone = true;
+        AjaxGetIdolNews(["Janine+Chang+news", "Natalie+Portman+news"], "movie");
+    }
+});
+
+
+
+
+function AjaxGetIdolNews(queryList, category){
+
     $.ajax({
         url: '/idols/getIdolNews',
         type: 'get',
         data: {
-            name : ["steph+curry+news", "steve+nash+news", "kaka+news"]
+            name : queryList
         },
         success: function(allData){
             if(allData != "error") {
                 console.log(allData);
-                updateIdolNews(allData[0], 0, function(){
-                    updateIdolNews(allData[1], 1, function(){
-                        updateIdolNews(allData[2], 2, function(){});
+                updateIdolNews(allData[0], 0, category, function(){
+                    updateIdolNews(allData[1], 1, category, function(){
+                        updateIdolNews(allData[2], 2, category, function(){});
                     });
                 });
             }
@@ -26,20 +75,11 @@ $( document ).ready(function(){
             $('#content').html(errorMsg);
         }
     });
-});
+}
 
-
-function updateIdolNews(data, index, callback) {
+function updateIdolNews(data, index, category, callback) {
     var titles = data[1];
     var urls = data[0];
-
-    // var templateHolder = document.createElement('div');
-    // $(templateHolder).addClass("tempHolder");
-    //
-    // var template = $(".news-template div"); // get the template
-    // template.each(function(){
-    //     $(templateHolder).append(this);
-    // })
 
     var template = $(".news-template").clone();  // must clone, or everything done afterwards will impacted the original element
     template.attr("class", "");
@@ -59,7 +99,7 @@ function updateIdolNews(data, index, callback) {
         $(template).children().get(i).append(a);
     }
 
-    var idolSelector = "#idol" + index;
+    var idolSelector = "#" + category + "-div #idol" + index;
     $(idolSelector + " .idol-news").html(template);
     callback();
 
