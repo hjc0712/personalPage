@@ -9,11 +9,7 @@ const indexRoutes = require('./routes/index'),
     projectRoutes = require('./routes/project'),
     idolsRoutes = require('./routes/idols'),
     musicsRoutes = require('./routes/musics'),
-  basicRoutes = require('./routes/basic'),
-  serviceRoutes = require('./routes/services'),
-  referenceRoutes = require('./routes/references'),
-  careerRoutes = require('./routes/careers'),
-  fileRoutes = require('./routes/files');
+    fileRoutes = require('./routes/files');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -26,11 +22,6 @@ app.use('/home', homeRoutes);
 app.use('/project', projectRoutes);
 app.use('/idols', idolsRoutes);
 app.use('/musics', musicsRoutes);
-app.use('/basic', basicRoutes);
-app.use('/services', serviceRoutes);
-app.use('/references', referenceRoutes);
-app.use('/careers', careerRoutes);
-
 app.use('/files', fileRoutes);
 
 app.listen(process.env.PORT || 3000, function() {
