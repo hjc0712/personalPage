@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" type="text/css" href="/static/css/musics/musics.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+<%- include("../partials/contactModal", {currentUrl:"/home"}); %>
+<% include ../partials/leftColumn %>
+
+
+
+<div class="mainCol">
+    <section class="subMainCol idols">
+
+        <div class="subHero">
+            <div class="title">
+                <p><span>MY MUSICS</span></p>
+                <p>Vocal & Arrangement</p>
+            </div>
+            <div class="image">
+                <img class="heroImg" src="/static/img/index/music.jpg">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="subPageMainBody">
+
+
+            <div id="sport-div">
+                <div class="idolsItems" id="idol0">
+                    <div class="left">
+                        <p><span>My Music Productions</span></p>
+                        <a href="https://member.bilibili.com/v2?spm_id_from=333.851.b_696e7465726e6174696f6e616c486561646572.30#/upload-manager/article">
+                            <img src="/static/img/musics/arrangement.png">
+                            <p>My BiliBili Page <span class="glyphicon glyphicon-link" aria-hidden="true"></span></p>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <p><span>Highlights</span></p>
+                        <div class="idol-news">
+                            <p><a href="https://www.bilibili.com/video/BV1U5411x7Sk/"> 【Garageband】lemon 扒带 编曲改编 长笛主旋版 </a></p>
+                            <p><a href="https://www.bilibili.com/video/BV1WV411f7aR/"> 【GarageBand】扒带 FairyTail Main Theme </a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="idolsItems" id="idol1">
+                    <div class="left">
+                        <p><span>My Vocal works</span></p>
+                        <a href="http://kg.qq.com/node/personal?uid=63989f802d29348b">
+                            <img src="/static/img/musics/wesing.png">
+                            <p>My WeSing Page <span class="glyphicon glyphicon-link" aria-hidden="true"></span></p>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <p><span>Highights</span></p>
+                        <div class="idol-news">
+                            <p><a href="http://node.kg.qq.com/play?s=LLAlrRL9PCoooLZ1&g_f=personal"> Just Give Me a Reason </a></p>
+                            <p><a href="http://node.kg.qq.com/play?s=yygjWHyXDXyTYywi&g_f=personal"> Don't Break My Heart </a></p>
+                            <p><a href="http://node.kg.qq.com/play?s=mm9SEJmAxgN0fmAm&g_f=personal"> If You  </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+</div>
+
+
+
+
+<% include ../partials/scripts %>
+<script src="/static/js/leftColumn.js"></script>
+<!--<script src="/static/js/music.js"></script>-->
+</body>
+</html>

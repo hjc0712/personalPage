@@ -24,8 +24,8 @@ router.get('/', (req, res) => {
 
 router.get('/newsCrawler', (req, res) => {
     var url1 = "https://search.yahoo.com/search?p=coronavirus+statistics";
-    var url2 = "https://search.yahoo.com/search?p=seattle+condos+Zillow";
-    var url3 = "https://search.yahoo.com/search?p=javascript+crawler";
+    var url2 = "https://search.yahoo.com/search?p=seattle+condos";
+    var url3 = "https://search.yahoo.com/search?p=cheerio";
     var urls = [url1, url2, url3];
     var allData = [];
     var count = 0;
@@ -42,6 +42,7 @@ router.get('/newsCrawler', (req, res) => {
                 console.log("sss");
                 allData[cur] = collectLinks($);
                 count++;
+                console.log("leftColumn"+count);
                 if(count >= 3) {
                     console.log(allData[0][0][0]);
                     console.log(allData[0][1][0]);
@@ -64,7 +65,6 @@ router.get('/weatherCrawler', (req, res) => {
     //use call back to make sure, 'res.render' happens after crawler finishing.
     crawler(url, 1, function (err, $) {   //use the returning parameter of callback function
         if(err) {
-            console.log("aaaaaa" + $);
             res.send("error");
         } else {
             var data = getWeather($);
@@ -111,11 +111,14 @@ function collectLinks($){
     var allTitles = [];
     // var absoluteLinks = $("a[href^='http']");
     var results = $("#web .compTitle a[href^='http']");
+    // console.dir($("#web"));//.length + "aa" + results.length);
+
     results.each(function () {
         allAbsoluteLinks.push($(this).attr('href'));
         allTitles.push($(this).text());
     });
     var res = [allAbsoluteLinks, allTitles];
+    console.log(res[0][0]);
 
     return res;
 }
@@ -146,6 +149,9 @@ function crawler(url, i, callback) {
             // Check status code (200 is HTTP OK)
             console.log("Status code: " + response.statusCode);
             if (response.statusCode === 200) {
+                // if(i===2){
+                //     console.log(body);
+                // }
                 // Parse the document body
                 var $ = cheerio.load(body);
                 callback(null, $, i) //return parameter in call back function (null is the error field)

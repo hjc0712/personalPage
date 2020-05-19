@@ -18,6 +18,7 @@ $( document ).ready(function(){
         success: function(allData){
             if(allData != "error") {
                 globalData = allData;
+                console.log(allData);
                 updateNews(allData[0], 1);
                 updateNews(allData[1], 2);
                 updateNews(allData[2], 3);

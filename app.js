@@ -8,6 +8,7 @@ const indexRoutes = require('./routes/index'),
     homeRoutes = require('./routes/home'),
     projectRoutes = require('./routes/project'),
     idolsRoutes = require('./routes/idols'),
+    musicsRoutes = require('./routes/musics'),
   basicRoutes = require('./routes/basic'),
   serviceRoutes = require('./routes/services'),
   referenceRoutes = require('./routes/references'),
@@ -24,6 +25,7 @@ app.use('/', indexRoutes);
 app.use('/home', homeRoutes);
 app.use('/project', projectRoutes);
 app.use('/idols', idolsRoutes);
+app.use('/musics', musicsRoutes);
 app.use('/basic', basicRoutes);
 app.use('/services', serviceRoutes);
 app.use('/references', referenceRoutes);

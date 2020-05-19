@@ -5,7 +5,7 @@ $( document ).ready(function(){
     //Perform Ajax request.
 
     //Ajax call 2
-    AjaxGetIdolNews(["steph+curry+news", "steve+nash+news", "kaka+news"], "sport");
+    AjaxGetIdolNews(["steph+curry", "steve+nash", "kaka"], "sport");
 
 });
 
@@ -30,7 +30,7 @@ $("#music-btn").click(function(){
     //Ajax call 2
     if (!musicCrawlerDone) {
         musicCrawlerDone = true;
-        AjaxGetIdolNews(["JJ+Lin+news", "Tia+ray+singer", "Taylor+swift+news"], "music");
+        AjaxGetIdolNews(["JJ+Lin", "Tia+ray+singer", "Taylor+swift"], "music");
     }
 });
 
@@ -45,7 +45,7 @@ $("#movie-btn").click(function(){
     //Ajax call 2
     if (!movieCrawlerDone) {
         movieCrawlerDone = true;
-        AjaxGetIdolNews(["Janine+Chang+news", "Natalie+Portman+news"], "movie");
+        AjaxGetIdolNews(["Janine+Chang", "Natalie+Portman"], "movie");
     }
 });
 
