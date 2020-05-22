@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" type="text/css" href="/static/css/journeys/journeys.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+<%- include("../partials/contactModal", {currentUrl:"/home"}); %>
+<% include ../partials/leftColumn %>
+
+
+
+<div class="mainCol">
+    <section class="subMainCol journey">
+
+        <div class="subHero">
+            <div class="title">
+                <p><span>MY JOURNEYS</span></p>
+                <p>China & USA</p>
+            </div>
+            <div class="image">
+                <img class="heroImg" src="/static/img/index/journey.jpg">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="subPageMainBody">
+
+            <ul class="nav nav-tabs">
+                <li id="home-btn" role="presentation" class="active"><a>HOME</a></li>
+                <li id="touring-btn" role="presentation"><a>TOURING</a></li>
+            </ul>
+
+            <div class="home-div">
+                <a href="https://en.wikipedia.org/wiki/Seattle">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/seattle.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2020 - </span></p>
+                            <p class="system"><span>Seattle, USA</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/San_Diego">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/sanDiego.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2018 - 2020</span></p>
+                            <p class="ai"><span>San Diego, USA</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Shanghai">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/shanghai.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="javascript"><span>2017 - 2018</span></p>
+                            <p class="fullstack"><span>Shanghai, China</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Hangzhou">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/hangzhou.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2014 - 2018</span></p>
+                            <p class="ai"><span>Hangzhou, China</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/index/journey.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>1996 - 2014</span></p>
+                            <p class="ai"><span>Pinghu, China</span></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+
+            <div class="touring-div hidden">
+                <a href="https://en.wikipedia.org/wiki/Seattle">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/grandCanyon.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2020.1 </span></p>
+                            <p class="system"><span>Grand Canyon</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/San_Diego">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/lasVegas.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2019.12 / 2018.12</span></p>
+                            <p class="ai"><span>Las Vegas</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Shanghai">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/chicago.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="javascript"><span>2019.3</span></p>
+                            <p class="fullstack"><span>Chicago</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Hangzhou">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/buffalo.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2019.3</span></p>
+                            <p class="ai"><span>Detroit, Buffalo</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/qinghai.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2018.7</span></p>
+                            <p class="ai"><span>Qinghai, Gansu</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/quanzhou.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2017.5</span></p>
+                            <p class="ai"><span>Quanzhou</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/yangzhou.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2017.2</span></p>
+                            <p class="ai"><span>Yangzhou</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/losAngeles.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2016.7~9</span></p>
+                            <p class="ai"><span>Los Angeles</span></p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/xiamen.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2014.6</span></p>
+                            <p class="ai"><span>Xiamen</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/hongkong.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2013.8</span></p>
+                            <p class="ai"><span>Hong Kong</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/newYork.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2012.8</span></p>
+                            <p class="ai"><span>New York</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/dc.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2012.8</span></p>
+                            <p class="ai"><span>Washington D.C.</span></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Pinghu">
+                    <div class="projectItems">
+                        <div class="left">
+                            <img src="/static/img/journeys/boston.jpg">
+                        </div>
+                        <div class="right">
+                            <p class="python"><span>2012.8</span></p>
+                            <p class="ai"><span>Boston</span></p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+</div>
+
+
+
+
+<% include ../partials/scripts %>
+<script src="/static/js/journeys.js"></script>
+<script src="/static/js/leftColumn.js"></script>
+<!--<script src="/static/js/music.js"></script>-->
+</body>
+</html>

@@ -9,6 +9,7 @@ const indexRoutes = require('./routes/index'),
     projectRoutes = require('./routes/project'),
     idolsRoutes = require('./routes/idols'),
     musicsRoutes = require('./routes/musics'),
+    journeysRoutes = require('./routes/journeys'),
     fileRoutes = require('./routes/files');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -22,6 +23,7 @@ app.use('/home', homeRoutes);
 app.use('/project', projectRoutes);
 app.use('/idols', idolsRoutes);
 app.use('/musics', musicsRoutes);
+app.use('/journeys', journeysRoutes);
 app.use('/files', fileRoutes);
 
 app.listen(process.env.PORT || 3000, function() {
