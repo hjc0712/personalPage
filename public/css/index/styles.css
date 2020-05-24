@@ -128,6 +128,12 @@ footer {
 	to {opacity: 1; }
 }
 
+@media (max-width: 1500px) {
+	.hero .hero-vid {
+		height: 700px;
+	}
+}
+
 @media (max-width: 800px) {
 	.hero h1 {
 		font-size: 36px;
