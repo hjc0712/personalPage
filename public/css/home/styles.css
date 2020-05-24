@@ -84,6 +84,24 @@ section {
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
+
+}
+
+.services .grid li .unused {
+    /*for text on the img*/
+    position: relative;
+}
+
+.services .grid li .unused span{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.services .grid li .unused img{
+    opacity: 0.2;
 }
 
 .services .grid li .service-img img {
