@@ -98,7 +98,7 @@ footer {
 }
 
 .hero .hero-content-area {
-	animation: 2s slidefade 2s forwards;
+	animation: 2s fadein 2s forwards;
 	margin-top: 100px;
 	opacity: 0;
 	position: absolute;
